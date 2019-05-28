@@ -1,7 +1,7 @@
 #include <stdio.h>
-static int map[50][50] = {
 
-}
+static int map[50][50] = {}
+
 void load_map(int player_id) {
 	FILE *file;
 	file = fopen("map.txt", "r");
