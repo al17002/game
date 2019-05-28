@@ -32,6 +32,7 @@ void Player_Update() {
 			muki = 3;         //右向きフラグを立てる
 		else                                    //何のボタンも押されてなかったら
 			walking_flag = 0; //歩かないフラグを立てる
+
 		if (walking_flag == 1)
 			if (IsAbleToGo(m_x, m_y, muki) == 1)
 				walking_flag = 0;
