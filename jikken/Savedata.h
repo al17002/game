@@ -12,22 +12,24 @@ typedef struct player_item {
 	int item[8];
 	int item[9];
 	int item[10];
-}; //[ƒAƒCƒeƒ€id]‚Ì”B
+}; //[ã‚¢ã‚¤ãƒ†ãƒ id]ã®æ•°ã€‚
 
 
-typedef struct player_alldata {
-	player_item having_item;  //Š‚µ‚Ä‚¢‚éƒAƒCƒeƒ€
-	player_item stored_item; //‘qŒÉ‚É‚ ‚éƒAƒCƒeƒ€
-	int equipment;  //‘•”õ‚µ‚Ä‚¢‚éƒAƒCƒeƒ€‚ÌID
+typedef struct player_all_of_data{
+	player_item having_item;  //æ‰€æŒã—ã¦ã„ã‚‹ã‚¢ã‚¤ãƒ†ãƒ 
+	player_item stored_item; //å€‰åº«ã«ã‚ã‚‹ã‚¢ã‚¤ãƒ†ãƒ 
+	int equipment;  //è£…å‚™ã—ã¦ã„ã‚‹ã‚¢ã‚¤ãƒ†ãƒ ã®ID
 };
 
 typedef struct player_data {
 	player_item having_item;
 	int equipment;
-	int change_status; //‘•”õ‚µ‚Ä‚éƒAƒCƒeƒ€‚É‚æ‚é•Ï‰»’l
-	int y; //player‚Ì‚™À•W
-	int x; //xÀ•W
+	int change_status; //è£…å‚™ã—ã¦ã‚‹ã‚¢ã‚¤ãƒ†ãƒ ã«ã‚ˆã‚‹å¤‰åŒ–å€¤
+	int y; //playerã®ï½™åº§æ¨™
+	int x; //xåº§æ¨™
 
 };
 
-extern player_alldata player_all_of_data; //‚·‚×‚Ä‚Ìƒtƒ@ƒCƒ‹‚Åg‚¦‚éƒOƒ[ƒoƒ‹•Ï”éŒ¾B‘¼‚Ì–¼‘O‚ªv‚¢‚Â‚©‚È‚©‚Á‚½B
+extern player_all_of_data player_alldata; //ã™ã¹ã¦ã®ãƒ•ã‚¡ã‚¤ãƒ«ã§ä½¿ãˆã‚‹ã‚°ãƒ­ãƒ¼ãƒãƒ«å¤‰æ•°å®£è¨€ã€‚ä»–ã®åå‰ãŒæ€ã„ã¤ã‹ãªã‹ã£ãŸã€‚
+extern player_data player;
+
