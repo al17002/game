@@ -1,4 +1,4 @@
-﻿  Enemy.cpp
-  Player.cpp
-  コードを生成中...
+﻿  load_map.cpp
+c:\users\al16038\source\repos\game\jikken\load_map.cpp : warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  LINK : 前回のインクリメンタル リンクで C:\Users\al16038\source\repos\game\jikken\x64\Debug\GameProg.exe が見つからなかったか、ビルドされませんでした。フル リンクを行います。
   GameProg.vcxproj -> C:\Users\al16038\source\repos\game\jikken\x64\Debug\GameProg.exe

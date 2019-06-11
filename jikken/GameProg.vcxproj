@@ -36,6 +36,7 @@
     <ClCompile Include="EnemyMgr.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Keyboard.cpp" />
+    <ClCompile Include="load_map.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Menu.cpp" />

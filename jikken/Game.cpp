@@ -30,6 +30,6 @@ void Game_Update() {
 
 //描画
 void Game_Draw() {
-	DrawString(0, 0, "ゲーム画面です。", GetColor(255, 255, 255));
-	DrawString(0, 20, "Escキーを押すとメニュー画面に戻ります。", GetColor(255, 255, 255));
+	DrawString(0, 40, "ゲーム画面です。", GetColor(255, 255, 255));
+	DrawString(0, 60, "Escキーを押すとメニュー画面に戻ります。", GetColor(255, 255, 255));
 }
