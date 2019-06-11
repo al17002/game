@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 static int map[50][50] = {};
-int i,j;
+int i=0,j=0;
 
 void load_map(int player_id) {
 	FILE *fp;
@@ -20,11 +20,14 @@ void load_map(int player_id) {
 
 	for(i=0;i<50;i++){
 		fgets(buf,sizeof(buf),fp);
-		p=buf;
-		for(j=0;j<50;j++){
+		p=strtok(buf,",");
+		//printf("%s",buf);
+		//printf("%s",p);
+		while(p=strtok(NULL,",")){
 			map[i][j]=atoi(p);
-			p=end+1;
+			j++;
 		}
+		j=0;
 	}
 	fclose(fp);
 }
@@ -32,11 +35,11 @@ void load_map(int player_id) {
 int main() {
 	int player_id = 123;
 	load_map(player_id);
-	for(i=0;i<50;i++){
-		for(j=0;j<50;j++){
-			printf("%d ",map[i][j]);
-		}
-		printf("\n");
-	}
+	// for(i=0;i<50;i++){
+	// 	for(j=0;j<50;j++){
+	// 		printf("%d ",map[i][j]);
+	// 	}
+	// 	printf("\n");
+	// }
 	return 0;
 }
