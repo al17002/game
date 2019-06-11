@@ -9,13 +9,14 @@ typedef struct {
 	int x;
 	int muki;
 	int walking_flag;
+	bool enemy_turn;
 } Enemy_t;
 
 // ‰Šú‰»‚ğ‚·‚é
 void Enemy_Initialize(Enemy_t *Enemy,int x, int y, int *img);
 
 // “®‚«‚ğŒvZ‚·‚é
-bool Enemy_Update(Enemy_t *Enemy);
+void Enemy_Update(Enemy_t *Enemy);
 
 // •`‰æ‚·‚é
 void Enemy_Draw(Enemy_t Enemy);
