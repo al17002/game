@@ -1,7 +1,6 @@
 #pragma once
 
 typedef struct player_item {
-	int item[0];
 	int item[1];
 	int item[2];
 	int item[3];
