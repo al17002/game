@@ -6,12 +6,13 @@ static const int NUM = 2;        //プレイヤーの数
 
 static Enemy_t m_Enemy[NUM];   //プレイヤーの実体
 static int m_ImgEnemy;          //プレイヤーの画像ハンドル
+static int image[16];
 
 // 初期化をする
 void EnemyMgr_Initialize() {
-	m_ImgEnemy = LoadGraph("画像/キャラクタ01.png");
-	Enemy_Initialize(&m_Enemy[0], 160,160, m_ImgEnemy);// 初期化
-	Enemy_Initialize(&m_Enemy[1], 320,320, m_ImgEnemy);// 初期化
+	LoadDivGraph("画像/キャラクタ10.png", 16, 4, 4, 32, 32, image);
+	Enemy_Initialize(&m_Enemy[0], 160,160, image);// 初期化
+	Enemy_Initialize(&m_Enemy[1], 320,320, image);// 初期化
 }
 
 // 動きを計算する

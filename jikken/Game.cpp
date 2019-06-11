@@ -6,6 +6,8 @@
 #include "Map.h"
 #include "EnemyMgr.h"
 
+bool turn = true;//ターン(Global) True = player false = enemy
+
 typedef struct {
 	int x, y, img;
 }ch_t;
@@ -15,13 +17,15 @@ void Game_Update() {
 	if (CheckHitKey(KEY_INPUT_ESCAPE) != 0) { //Escキーが押されていたら
 		SceneMgr_ChangeScene(eScene_Menu);//シーンをメニューに変更
 	}
+
 	Keyboard_Update();
-	Player_Update();  //計算
+	Player_Update();
 	EnemyMgr_Update();
 
+	Player_Draw();
 	EnemyMgr_Draw();
 	Map_Draw();
-	Player_Draw(); //描画
+
 }
 
 //描画
