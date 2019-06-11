@@ -2,6 +2,8 @@
 #include "Player.h"
 #include "Keyboard.h"
 #include "Map.h"
+#include "Game.h"
+
 // このファイル内でしか使えないグローバル変数
 static int m_Image; //画像ハンドル
 static int m_y;     //y座標
@@ -20,7 +22,8 @@ void Player_Initialize() {
 
 // 動きを計算する
 void Player_Update() {
-	if (m_x % 32 == 0 && m_y % 32 == 0) {//座標が32で割り切れたら入力可能
+	if (m_x % 32 == 0 && m_y % 32 == 0&&turn) {//座標が32で割り切れたら入力可能　ターンがない限り動けない
+		
 		walking_flag = 1;         //歩くフラグを立てる。
 		if (Keyboard_Get(KEY_INPUT_UP) == 1)  //上ボタンが押されたら
 			muki = 0;         //上向きフラグを立てる
@@ -47,6 +50,10 @@ void Player_Update() {
 			m_y++;
 		else if (muki == 3)        //右向きならch.x座標を増やす
 			m_x++;
+
+		if (m_x % 32 == 0 && m_y % 32 == 0) {
+			turn = false; //目的地に到着、ターンを渡す
+		}
 	}
 }
 
