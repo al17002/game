@@ -5,6 +5,8 @@
 #include "Title.h"
 #include "Player.h"
 #include "SaveSelect.h"
+#include "Save.h"
+#include "EquipmentChange.h"
 
 static eScene Scene = eScene_Title;    //シーン管理変数
 
@@ -23,7 +25,12 @@ void SceneMgr_Update() {
 	case eScene_SaveSelect:
 		SaveSelect_Update();
 		break;
-
+	case eScene_Save:
+		Save_Update();
+		break;
+	case eScene_EquipmentChange:
+		EquipmentChange_Update();
+		break;
 	}
 }
 
@@ -42,7 +49,14 @@ void SceneMgr_Draw() {
 	case eScene_SaveSelect:
 		SaveSelect_Draw();
 		break;
+	case eScene_Save:
+		Save_Draw();
+		break;
+	case eScene_EquipmentChange:
+		EquipmentChange_Draw();
+		break;
 	}
+
 }
 
 // 引数 nextScene にシーンを変更する

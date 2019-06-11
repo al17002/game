@@ -26,6 +26,7 @@ void SaveSelect_Draw() {
 	DrawString(0, 0, "セーブ選択画面(番号をプッシュしてセーブデータを選択)", GetColor(255, 255, 255));
 	DrawString(0, 20, "T:タイトル画面に戻る", GetColor(255, 255, 255));
 	DrawString(0, 40, "1.アイテム情報", GetColor(255, 255, 255));//データ1アイテム情報
+	//s = ;//セーブデータ呼び出し
 	DrawFormatString(20, 60, GetColor(255, 255, 255), "1:%s", s[0]);
 	DrawFormatString(20, 80, GetColor(255, 255, 255), "2:%s", s[1]);
 	DrawFormatString(20, 100, GetColor(255, 255, 255), "3:%s", s[2]);
@@ -33,12 +34,13 @@ void SaveSelect_Draw() {
 	DrawFormatString(20, 140, GetColor(255, 255, 255), "5:%s", s[4]);
 
 	DrawString(0, 180, "2.アイテム情報", GetColor(255, 255, 255));//データ2アイテム情報
+	//s = ;//セーブデータ呼び出し
 	DrawFormatString(20, 200, GetColor(255, 255, 255), "1:%s", s[0]);
 	DrawFormatString(20, 220, GetColor(255, 255, 255), "2:%s", s[1]);
 	DrawFormatString(20, 240, GetColor(255, 255, 255), "3:%s", s[2]);
 	DrawFormatString(20, 260, GetColor(255, 255, 255), "4:%s", s[3]);
 	DrawFormatString(20, 280, GetColor(255, 255, 255), "5:%s", s[4]);
-
+	//s=;//セーブデータ呼び出し
 	DrawString(0, 320, "3.アイテム情報", GetColor(255, 255, 255));//データ3アイテム情報
 	DrawFormatString(20, 340, GetColor(255, 255, 255), "1:%s", s[0]);
 	DrawFormatString(20, 360, GetColor(255, 255, 255), "2:%s", s[1]);

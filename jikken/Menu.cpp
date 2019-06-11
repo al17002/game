@@ -8,10 +8,13 @@ void Menu_Update() {
 		SceneMgr_ChangeScene(eScene_Game);//シーンをゲーム画面に変更
 	}
 	if (CheckHitKey(KEY_INPUT_H) != 0) {
-		DrawString(20, 280, "変更したい装備をプッシュ", GetColor(255, 255, 255));
+		SceneMgr_ChangeScene(eScene_EquipmentChange);
 	}
 	if (CheckHitKey(KEY_INPUT_T) != 0) {
 			SceneMgr_ChangeScene(eScene_Title);
+	}
+	if (CheckHitKey(KEY_INPUT_S) != 0) {
+		SceneMgr_ChangeScene(eScene_Save);
 	}
 }
 
