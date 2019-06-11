@@ -3,13 +3,17 @@
 #define DEF_Enemy_H
 
 typedef struct {
-	int Image;
+	int Image[16];
+	int m_Image;
 	int y;
 	int x;
+	int muki;
+	int walking_flag;
+	bool enemy_turn;
 } Enemy_t;
 
 // ‰Šú‰»‚ğ‚·‚é
-void Enemy_Initialize(Enemy_t *Enemy,int x, int y, int img);
+void Enemy_Initialize(Enemy_t *Enemy,int x, int y, int *img);
 
 // “®‚«‚ğŒvZ‚·‚é
 void Enemy_Update(Enemy_t *Enemy);
