@@ -20,7 +20,7 @@ void input_savedata(int num) {
 		fp = fopen("new_savedata.txt", "r");//新しいセーブを作成の際のいい案が思いついてない
 	}
 
-	while (fgets(n_char,2,fp) != NULL) {
+	for(i=0; (fgets(n_char,2,fp) != NULL);i++) {
 		n_int = atoi(n_char);
 		if (i < 10)player_alldata.having_item.item[i] = n_int;
 		else if(i < 20)player_alldata.stored_item.item[i-10] = n_int;
