@@ -22,23 +22,28 @@ void Player_Initialize() {
 
 // 動きを計算する
 void Player_Update() {
-	if (m_x % 32 == 0 && m_y % 32 == 0&&turn) {//座標が32で割り切れたら入力可能　ターンがない限り動けない
+	if (m_x % 32 == 0 && m_y % 32 == 0) {//座標が32で割り切れたら入力可能　ターンがない限り動けない
 		
-		walking_flag = 1;         //歩くフラグを立てる。
-		if (Keyboard_Get(KEY_INPUT_UP) == 1)  //上ボタンが押されたら
-			muki = 0;         //上向きフラグを立てる
-		else if (Keyboard_Get(KEY_INPUT_LEFT) == 1)  //左ボタンが押されたら
-			muki = 1;         //左向きフラグを立てる
-		else if (Keyboard_Get(KEY_INPUT_DOWN) == 1)  //下ボタンが押されたら
-			muki = 2;         //下向きフラグを立てる
-		else if (Keyboard_Get(KEY_INPUT_RIGHT) == 1)  //右ボタンが押されたら
-			muki = 3;         //右向きフラグを立てる
-		else                                    //何のボタンも押されてなかったら
-			walking_flag = 0; //歩かないフラグを立てる
+		walking_flag = 0;         //止まるフラグを立てる。
+		if (turn) {//ターンがある（ぷれいやー)
+			walking_flag = 1;
+			if (Keyboard_Get(KEY_INPUT_UP) == 1)  //上ボタンが押されたら
+				muki = 0;         //上向きフラグを立てる
+			else if (Keyboard_Get(KEY_INPUT_LEFT) == 1)  //左ボタンが押されたら
+				muki = 1;         //左向きフラグを立てる
+			else if (Keyboard_Get(KEY_INPUT_DOWN) == 1)  //下ボタンが押されたら
+				muki = 2;         //下向きフラグを立てる
+			else if (Keyboard_Get(KEY_INPUT_RIGHT) == 1)  //右ボタンが押されたら
+				muki = 3;         //右向きフラグを立てる
+			else                                    //何のボタンも押されてなかったら
+				walking_flag = 0; //歩かないフラグを立てる
 
-		if (walking_flag == 1)
-			if (IsAbleToGo(m_x, m_y, muki) == 1)
-				walking_flag = 0;
+			if (walking_flag == 1)
+				if (IsAbleToGo(m_x, m_y, muki) == 1) {
+					walking_flag = 0;
+					turn = false;
+				}
+		}
 	}
 
 	if (walking_flag == 1) {        //歩くフラグが立っていたら
