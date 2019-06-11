@@ -20,7 +20,7 @@ void Player_Initialize() {
 
 // 動きを計算する
 void Player_Update() {
-	if (m_x % 32 == 0 && m_y % 32 == 0) {         //座標が32で割り切れたら入力可能
+	if (m_x % 32 == 0 && m_y % 32 == 0) {//座標が32で割り切れたら入力可能
 		walking_flag = 1;         //歩くフラグを立てる。
 		if (Keyboard_Get(KEY_INPUT_UP) == 1)  //上ボタンが押されたら
 			muki = 0;         //上向きフラグを立てる

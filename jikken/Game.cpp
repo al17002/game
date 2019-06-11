@@ -4,6 +4,7 @@
 #include "Player.h"
 #include "Keyboard.h"
 #include "Map.h"
+#include "EnemyMgr.h"
 
 typedef struct {
 	int x, y, img;
@@ -16,6 +17,9 @@ void Game_Update() {
 	}
 	Keyboard_Update();
 	Player_Update();  //ŒvŽZ
+	EnemyMgr_Update();
+
+	EnemyMgr_Draw();
 	Map_Draw();
 	Player_Draw(); //•`‰æ
 }
