@@ -24,9 +24,11 @@
     <ClInclude Include="EnemyMgr.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Keyboard.h" />
+    <ClInclude Include="load_map.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Savedata.h" />
     <ClInclude Include="SceneMgr.h" />
     <ClInclude Include="Title.h" />
   </ItemGroup>

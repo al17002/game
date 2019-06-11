@@ -1,4 +1,5 @@
 ﻿  load_map.cpp
-c:\users\al16038\source\repos\game\jikken\load_map.cpp : warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  LINK : 前回のインクリメンタル リンクで C:\Users\al16038\source\repos\game\jikken\x64\Debug\GameProg.exe が見つからなかったか、ビルドされませんでした。フル リンクを行います。
+c:\users\al16038\source\repos\game\jikken\load_map.h : warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+c:\users\al16038\source\repos\game\jikken\load_map.h(14): warning C4101: 'end': ローカル変数は 1 度も使われていません。
+LINK : warning LNK4031: サブシステムが指定されていません。CONSOLE を仮定します。
   GameProg.vcxproj -> C:\Users\al16038\source\repos\game\jikken\x64\Debug\GameProg.exe
