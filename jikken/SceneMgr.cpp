@@ -4,6 +4,7 @@
 #include "SceneMgr.h"
 #include "Title.h"
 #include "Player.h"
+#include "SaveSelect.h"
 
 static eScene Scene = eScene_Title;    //ƒV[ƒ“ŠÇ—•Ï”
 
@@ -19,6 +20,10 @@ void SceneMgr_Update() {
 	case eScene_Title:
 		Title_Update();
 		break;
+	case eScene_SaveSelect:
+		SaveSelect_Update();
+		break;
+
 	}
 }
 
@@ -33,6 +38,9 @@ void SceneMgr_Draw() {
 		break;
 	case eScene_Title:
 		Title_Draw();
+		break;
+	case eScene_SaveSelect:
+		SaveSelect_Draw();
 		break;
 	}
 }

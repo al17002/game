@@ -4,6 +4,7 @@ typedef enum {
 	eScene_Menu,    //メニュー画面
 	eScene_Game,    //ゲーム画面
 	eScene_Title,  //設定画面
+	eScene_SaveSelect, //セーブデータ決定画面
 } eScene;
 
 //更新

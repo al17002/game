@@ -27,6 +27,7 @@
     <ClInclude Include="Map.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="SaveSelect.h" />
     <ClInclude Include="SceneMgr.h" />
     <ClInclude Include="Title.h" />
   </ItemGroup>
@@ -40,6 +41,7 @@
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="SaveSelect.cpp" />
     <ClCompile Include="SceneMgr.cpp" />
     <ClCompile Include="Title.cpp" />
   </ItemGroup>
