@@ -9,9 +9,7 @@ void load_map(int player_id) {
 	FILE *fp;
 	char *filename = "map.txt";
 	char buf[200], *p ,*end;
-
 	printf("player_id:%d\n", player_id);
-
 	if ((fp=fopen(filename,"r"))==NULL) {
 		printf("error:E-C6-1\nマップ情報の読込に失敗しました。");
 		fclose(fp);
