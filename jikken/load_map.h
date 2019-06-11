@@ -16,7 +16,6 @@ void load_map(int player_id,int map[50][50]) {
 	fopen_s(&fp, filename, "r");
 	if(fp==NULL){
 		printf("error/n");
-		//printf("error:E-C6-1\nマップ情報の読込に失敗しました。");
 		fclose(fp);
 		return;
 	}
