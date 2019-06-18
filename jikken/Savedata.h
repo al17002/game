@@ -15,6 +15,7 @@ item_desc itemRef[100]; //[繧｢繧､繝�繝�id]
 
 typedef struct item{
     int ID;
+	int atk;
     int hp;
 }item;
 
@@ -31,7 +32,6 @@ typedef struct player_data {
 	item having_item[10];
 	int itemnum;
 	item equipment;
-	int change_status; //陬�蛯吶＠縺ｦ繧九い繧､繝�繝�縺ｫ繧医ｋ螟牙喧蛟､
 	int y; //player縺ｮ�ｽ吝ｺｧ讓�
 	int x; //x蠎ｧ讓�
 
