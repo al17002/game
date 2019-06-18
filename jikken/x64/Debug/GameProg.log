@@ -1,16 +1,13 @@
-﻿  Enemy.cpp
-  EnemyMgr.cpp
-  Game.cpp
-  main.cpp
-  Map.cpp
+﻿  Map.cpp
 c:\users\al16038\source\repos\game\jikken\map.cpp : warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
 c:\users\al16038\source\repos\game\jikken\map.cpp(53): warning C4101: 'end': ローカル変数は 1 度も使われていません。
   Menu.cpp
-  newfloor.cpp
   Player.cpp
+c:\users\al16038\source\repos\game\jikken\savedata.h : warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
   Savedata.cpp
 c:\users\al16038\source\repos\game\jikken\savedata.cpp : warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
 c:\users\al16038\source\repos\game\jikken\savedata.h : warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
 c:\users\al16038\source\repos\game\jikken\savedata.cpp(119): warning C4101: 'i': ローカル変数は 1 度も使われていません。
   コードを生成中...
-  GameProg.vcxproj -> C:\Users\al16038\source\repos\game\jikken\x64\Debug\GameProg.exe
+Savedata.obj : error LNK2005: "struct item_desc * itemRef" (?itemRef@@3PAUitem_desc@@A) は既に Player.obj で定義されています。
+C:\Users\al16038\source\repos\game\jikken\x64\Debug\GameProg.exe : fatal error LNK1169: 1 つ以上の複数回定義されているシンボルが見つかりました。
