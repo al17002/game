@@ -1,6 +1,7 @@
 #include "Menu.h"
 #include "SceneMgr.h"
 #include "DxLib.h"
+#include "newfloor.h"
 char t[5][20] = { "ソード","a","i","u","e" };
 //更新
 void Menu_Update() {
@@ -15,6 +16,9 @@ void Menu_Update() {
 	}
 	if (CheckHitKey(KEY_INPUT_S) != 0) {
 		SceneMgr_ChangeScene(eScene_Save);
+	}
+	if (CheckHitKey(KEY_INPUT_N) != 0) {
+		floor_renew(2);
 	}
 }
 
