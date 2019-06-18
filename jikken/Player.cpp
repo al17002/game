@@ -3,11 +3,10 @@
 #include "Keyboard.h"
 #include "Map.h"
 #include "Game.h"
+#include "Savedata.h"
 
 // このファイル内でしか使えないグローバル変数
 static int m_Image; //画像ハンドル
-static int m_y;     //y座標
-static int m_x;
 static int walking_flag;
 static int muki;
 static int image[16];
@@ -16,8 +15,8 @@ static int image[16];
 void Player_Initialize() {
 	LoadDivGraph("画像/キャラクタ10.png", 16, 4, 4, 32, 32, image);
 	m_Image = image[(m_x % 32 + m_y % 32) / 8 + muki * 4];
-	m_y = 320;
-	m_x = 160;
+	player.x = 320;
+	player.y = 160;
 }
 
 // 動きを計算する
@@ -48,13 +47,13 @@ void Player_Update() {
 
 	if (walking_flag == 1) {        //歩くフラグが立っていたら
 		if (muki == 0)        //上向きならch.y座標を減らす
-			m_y--;
+			move_player(0, -8);
 		else if (muki == 1)        //左向きならch.x座標を減らす
-			m_x--;
+			move_player(-8, 0);
 		else if (muki == 2)        //下向きならch.y座標を増やす
-			m_y++;
+			move_player(0, 8);
 		else if (muki == 3)        //右向きならch.x座標を増やす
-			m_x++;
+			move_player(8, 0);
 
 		if (m_x % 32 == 0 && m_y % 32 == 0) {
 			turn = false; //目的地に到着、ターンを渡す

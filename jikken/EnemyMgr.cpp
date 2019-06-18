@@ -4,11 +4,12 @@
 #include "Map.h"
 #include "Game.h"
 
-static const int NUM = 2;        //プレイヤーの数
+static const int NUM = 2;        //敵の数
 
-static Enemy_t m_Enemy[NUM];   //プレイヤーの実体
-static int m_ImgEnemy;          //プレイヤーの画像ハンドル
+static Enemy_t m_Enemy[NUM];   //敵の実体
+static int m_ImgEnemy;          //敵の画像ハンドル
 static int image[16];
+
 static bool inturn = false;
 static bool check = false;
 

@@ -1,6 +1,5 @@
 #include "Map.h"
 #include "DxLib.h"
-#include "load_map.h"
 
 static int map[50][50] = {};
 
@@ -33,12 +32,25 @@ void Map_Draw() {
 				DrawBox(j * 32, i * 32, (j + 1) * 32, (i + 1) * 32, GetColor(255, 0, 0), TRUE);
 }
 
-void load_map(int player_id) {
+void load_map(int map_id) {
 	int i = 0, j = 0;
 	FILE *fp;
 	char *filename = "map.txt";
+	switch (map_id) {
+	case 1:
+		filename = "map.txt";
+		break;
+	case 2:
+		filename = "map2.txt";
+		break;
+	case 3:
+		filename = "map.txt";
+		break;
+	default:
+		filename = "map.txt";
+		break;
+	}
 	char buf[200], *p, *end;
-	printf("player_id:%d\n", player_id);
 	fopen_s(&fp, filename, "r");
 	if (fp == NULL) {
 		printf("error/n");

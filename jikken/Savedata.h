@@ -4,6 +4,12 @@
 
 using namespace std;
 
+void output_savedata(int num);
+void input_savedata(int num);
+int get_equipment();
+void move_player(int move_x, int move_y);
+void data_update(int event_id, int change_id, int item_hp, int change_num);
+
 typedef struct item_desc{//アイテムの説明
 	string name;
     string explain;
@@ -36,6 +42,7 @@ typedef struct player_data {
 	int x; 
 
 }player_data;
+
 
 
 extern player_item_data player_item; //グローバル変数
