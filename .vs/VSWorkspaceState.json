@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\jikken"
+    "\\jikken",
+    "\\jikken\\DxLib"
   ],
-  "SelectedNode": "\\jikken\\GameProg.vcxproj",
+  "SelectedNode": "\\jikken\\DxLib\\vorbis_static_vs2015_x86_d.lib",
   "PreviewInSolutionExplorer": false
 }
