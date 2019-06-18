@@ -5,5 +5,5 @@ int IsAbleToGo(int x, int y, int muki);
 
 void Map_Draw();
 
-void load_map(int player_id, int map[50][50]);
+void load_map(int player_id);
 

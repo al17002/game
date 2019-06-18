@@ -37,17 +37,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Actor.cpp" />
+    <ClCompile Include="can_move.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EnemyMgr.cpp" />
     <ClCompile Include="EquipmentChange.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Keyboard.cpp" />
-    <ClCompile Include="load_map.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Save.cpp" />
+    <ClCompile Include="Savedata.cpp" />
     <ClCompile Include="SaveSelect.cpp" />
     <ClCompile Include="SceneMgr.cpp" />
     <ClCompile Include="Title.cpp" />

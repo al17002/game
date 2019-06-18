@@ -11,7 +11,7 @@ void load_map(int player_id,int map[50][50]) {
 	int i=0,j=0;
 	FILE *fp;
 	char *filename = "map.txt";
-	char buf[200], *p ,*end;
+	char buf[200], *p;
 	printf("player_id:%d\n", player_id);
 	fopen_s(&fp, filename, "r");
 	if(fp==NULL){

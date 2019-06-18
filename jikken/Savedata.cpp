@@ -2,24 +2,25 @@
 #include "Savedata.h"
 
 
-player_item_data player_item;//莉悶�ｮ繝輔ぃ繧､繝ｫ縺ｧ菴ｿ縺医ｋ繧ｰ繝ｭ繝ｼ繝舌Ν螟画焚
+player_item_data player_item;//グローバル変数
 player_data player;
 
-void output_savedata(int num){//繧ｻ繝ｼ繝�
+void output_savedata(int num){//セーブ
     int i;
 	FILE *fp;
 	
 	switch(num){
         case 1:
-		    fp=fopen("savedata1.dat", "wb");
+		    fopen_s(&fp,"savedata1.dat", "wb");
             break;
         case 2:
-		    fp = fopen("savedata2.txt", "wb");
+		    fopen_s(&fp, "savedata2.txt", "wb");
             break;
         case 3:
-		    fp = fopen("savedata3.txt", "wb");
+		    fopen_s(&fp, "savedata3.txt", "wb");
             break;
         default:
+			fopen_s(&fp, "savedata1.dat", "wb");
             break;
 	}
 
@@ -57,26 +58,26 @@ void output_savedata(int num){//繧ｻ繝ｼ繝�
 
 
 
-void input_savedata(int num) {//繝ｭ繝ｼ繝�
+void input_savedata(int num) {//ロード
 
 	int i;
 	FILE *fp;
 	
 	switch(num) {
         case 1:
-		    fp = fopen("savedata1.dat", "rb");
+		    fopen_s(&fp, "savedata1.dat", "rb");
             break;
         case 2:
-		    fp = fopen("savedata2.dat", "rb");
+		    fopen_s(&fp, "savedata2.dat", "rb");
             break;
         default:
-		    fp = fopen("new_savedata.dat", "rb");
+		    fopen_s(&fp, "new_savedata.dat", "rb");
             break;
 	}
     
 
     //fp=fopen("new_savedata.txt", "rb");
-    fp=fopen("savedata.dat", "rb");
+    fopen_s(&fp, "savedata.dat", "rb");
 
 	for(i=0;i<10;i++){
         //fscanf(fp,"%d %d",&player_item.having_item[i].ID,&player_item.having_item[i].hp);
@@ -109,14 +110,14 @@ int get_equipment() {
 }
 
 void move_player(int move_x,int move_y){
-	//縺ゅｓ縺ｾ繧頑э蜻ｳ縺ｪ縺��ｼ�
+	//プレイヤーを移動
 	player.x += move_x;
 	player.y += move_y;
 }
 
 void data_update(int event_id,int change_id,int item_hp,int change_num) {
 	int i;
-	//event_id縺ｮ菴ｿ縺�縺ｩ縺薙ｍ縺ｯ縺�縺ｾ縺ｮ縺ｨ縺薙ｍ譛ｪ螳�
+	//event_idの使いどころは未定
 
     switch (event_id){
         case 0://get item

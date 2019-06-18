@@ -2,7 +2,7 @@
 #include "DxLib.h"
 #include "load_map.h"
 
-int map[50][50] = {};
+static int map[50][50] = {};
 
 
 
@@ -33,7 +33,7 @@ void Map_Draw() {
 				DrawBox(j * 32, i * 32, (j + 1) * 32, (i + 1) * 32, GetColor(255, 0, 0), TRUE);
 }
 
-void load_map(int player_id, int map[50][50]) {
+void load_map(int player_id) {
 	int i = 0, j = 0;
 	FILE *fp;
 	char *filename = "map.txt";
