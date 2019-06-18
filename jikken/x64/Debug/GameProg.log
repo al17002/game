@@ -1,2 +1,10 @@
 ﻿  EquipmentChange.cpp
+  Game.cpp
+  Menu.cpp
+  Save.cpp
+  SaveSelect.cpp
+  SceneMgr.cpp
+  Title.cpp
+  main.cpp
+  コードを生成中...
   GameProg.vcxproj -> C:\Users\al17002\source\repos\game\jikken\x64\Debug\GameProg.exe

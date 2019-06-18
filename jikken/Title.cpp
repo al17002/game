@@ -14,7 +14,7 @@ void Title_Update() {
 
 //描画
 void Title_Draw() {
-	DrawString(0, 0, "タイトル画面です。", GetColor(255, 255, 255));
+	DrawString(0, 0, "ローグライクゲーム(仮)", GetColor(255, 255, 255));
 	DrawString(0, 20, "H:はじめから", GetColor(255, 255, 255));
 	DrawString(0, 40, "C:続きから", GetColor(255, 255, 255));
 }
