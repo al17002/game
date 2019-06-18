@@ -7,12 +7,11 @@
 #include <string.h>
 #include <stdlib.h>
 
-void load_map(int player_id,int map[50][50]) {
+void load_map(int map_id) {
 	int i=0,j=0;
 	FILE *fp;
 	char *filename = "map.txt";
 	char buf[200], *p;
-	printf("player_id:%d\n", player_id);
 	fopen_s(&fp, filename, "r");
 	if(fp==NULL){
 		printf("error/n");
