@@ -43,3 +43,4 @@ typedef struct player_data {
 extern player_item_data player_item; //グローバル変数
 extern player_data player;
 
+void input_savedata(int);
