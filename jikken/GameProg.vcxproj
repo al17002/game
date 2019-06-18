@@ -55,6 +55,9 @@
     <ClCompile Include="SceneMgr.cpp" />
     <ClCompile Include="Title.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="new_savedata.dat" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{B7FE43BB-6897-4943-AA49-A828ECE78DA9}</ProjectGuid>

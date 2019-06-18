@@ -5,7 +5,7 @@
 #include "Map.h"
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
-	ChangeWindowMode(TRUE), DxLib_Init(), SetDrawScreen(DX_SCREEN_BACK); //ウィンドウモード変更と初期化と裏画面設定
+	ChangeWindowMode(TRUE), DxLib_Init(), SetGraphMode(1480,1024, 32), SetDrawScreen(DX_SCREEN_BACK); //ウィンドウモード変更と初期化と裏画面設定
 	Player_Initialize();
 	EnemyMgr_Initialize();
 	load_map(1);
