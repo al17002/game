@@ -1,6 +1,7 @@
 #include "Game.h"
 #include "SceneMgr.h"
 #include "DxLib.h"
+#include "Savedata.h"
 
 //更新
 void Title_Update() {
@@ -8,6 +9,7 @@ void Title_Update() {
 		SceneMgr_ChangeScene(eScene_Game);//はじめから
 	}
 	if (CheckHitKey(KEY_INPUT_C) != 0) { //Cキーが押されたら
+		input_savedata(0);
 		SceneMgr_ChangeScene(eScene_SaveSelect);//続きから
 	}
 }

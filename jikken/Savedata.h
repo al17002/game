@@ -11,7 +11,7 @@ typedef struct item_desc{//アイテムの説明
 }item_desc;
 
 
-item_desc itemRef[100]; //[アイテムid]
+extern item_desc item_Ref[100]; //[アイテムid]
 
 typedef struct item{
     int ID;
@@ -41,3 +41,6 @@ typedef struct player_data {
 extern player_item_data player_item; //グローバル変数
 extern player_data player;
 
+void input_savedata(int);
+
+void output_savedata(int);

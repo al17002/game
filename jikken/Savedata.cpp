@@ -62,44 +62,41 @@ void input_savedata(int num) {//ロード
 
 	int i;
 	FILE *fp;
-	
-	switch(num) {
-        case 1:
-		    fopen_s(&fp, "savedata1.dat", "rb");
-            break;
-        case 2:
-		    fopen_s(&fp, "savedata2.dat", "rb");
-            break;
-        default:
-		    fopen_s(&fp, "new_savedata.dat", "rb");
-            break;
+
+	switch (num) {
+	case 1:
+		fopen_s(&fp, "savedata1.dat", "rb");
+		break;
+	case 2:
+		fopen_s(&fp, "savedata2.dat", "rb");
+		break;
+	default:
+		fopen_s(&fp, "new_savedata.dat", "rb");
+		break;
 	}
-    
 
-    //fp=fopen("new_savedata.txt", "rb");
-    fopen_s(&fp, "savedata.dat", "rb");
 
-	for(i=0;i<10;i++){
-        //fscanf(fp,"%d %d",&player_item.having_item[i].ID,&player_item.having_item[i].hp);
-        fread(&player_item.having_item[i].ID,sizeof(int),1,fp);
-        fread(&player_item.having_item[i].hp,sizeof(int),1,fp);
-    }
+	//fp=fopen("new_savedata.txt", "rb");
+	for (i = 0; i < 10; i++) {
+		//fscanf(fp,"%d %d",&player_item.having_item[i].ID,&player_item.having_item[i].hp);
+		fread(&player_item.having_item[i].ID, sizeof(int), 1, fp);
+		fread(&player_item.having_item[i].hp, sizeof(int), 1, fp);
+	}
 
-    //fscanf(fp,"%d",&player_item.itemnum);
-    fread(&player_item.itemnum,sizeof(int),1,fp);
+	//fscanf(fp,"%d",&player_item.itemnum);
+	fread(&player_item.itemnum, sizeof(int), 1, fp);
 
-    for(i=0;i<100;i++){
-        //fscanf(fp,"%d",&player_item.stashed_item[i]);
-        fread(&player_item.stashed_item[i],sizeof(int),1,fp);
-    }
+	for (i = 0; i < 100; i++) {
+		//fscanf(fp,"%d",&player_item.stashed_item[i]);
+		fread(&player_item.stashed_item[i], sizeof(int), 1, fp);
+	}
 
-    //fscanf(fp,"%d",&player_item.stashednum);
-    fread(&player_item.stashednum,sizeof(int),1,fp);
-    //fscanf(fp,"%d %d",&player_item.equipment.ID,&player_item.equipment.hp);
-    fread(&player_item.equipment.ID,sizeof(int),1,fp);
-    fread(&player_item.equipment.hp,sizeof(int),1,fp);
-    fclose(fp);
-    output_savedata(1);
+	//fscanf(fp,"%d",&player_item.stashednum);
+	fread(&player_item.stashednum, sizeof(int), 1, fp);
+	//fscanf(fp,"%d %d",&player_item.equipment.ID,&player_item.equipment.hp);
+	fread(&player_item.equipment.ID, sizeof(int), 1, fp);
+	fread(&player_item.equipment.hp, sizeof(int), 1, fp);
+	fclose(fp);
 }
 
 
