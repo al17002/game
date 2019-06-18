@@ -4,17 +4,28 @@
 static int map[32][40] = {};
 
 void enemy_event() {};
+void item_event() {};
+void floor_renew() {};
 
 int IsAbleToGo(int x, int y, int muki) {//進めるかを判定する
-	if (muki == 0){//上向きなら
-		if (map[y / 32 - 1][x / 32] == 1) //進めるか判定
+	if (muki == 0) {//上向きなら
+		if (map[y / 32 - 1][x / 32] == 1) { //進めるか判定
 			return 1;//エラー
+		}
 		else if (map[y / 32 - 1][x / 32] == 2) {
 			enemy_event(); //進む先のmap[][]==2のとき、enemyとのイベント発生の関数呼び出し
 			return 1;
 		}
+		else if (map[y / 32 - 1][x / 32] == 3) {
+			item_event();
+			return 0;
 		}
-	if (muki == 1){//左向きなら
+		else if (map[y / 32 - 1][x / 32] == 4) {
+			floor_renew();
+			return 0;
+		}
+	}
+	if (muki == 1) {//左向きなら
 		if (map[y / 32][x / 32 - 1] == 1) {
 			return 1;
 		}
@@ -22,8 +33,16 @@ int IsAbleToGo(int x, int y, int muki) {//進めるかを判定する
 			enemy_event(); //進む先のmap[][]==2のとき、enemyとのイベント発生の関数呼び出し
 			return 1;
 		}
+		else if (map[y / 32 ][x / 32 - 1] == 3) {
+			item_event();
+			return 0;
 		}
-	if (muki == 2){//下向きなら
+		else if (map[y / 32][x / 32 - 1] == 4) {
+			floor_renew();
+			return 0;
+		}
+	}
+	if (muki == 2) {//下向きなら
 		if (map[y / 32 + 1][x / 32] == 1) {
 			return 1;
 		}
@@ -31,8 +50,16 @@ int IsAbleToGo(int x, int y, int muki) {//進めるかを判定する
 			enemy_event(); //進む先のmap[][]==2のとき、enemyとのイベント発生の関数呼び出し
 			return 1;
 		}
+		else if (map[y / 32 + 1][x / 32] == 3) {
+			item_event();
+			return 0;
 		}
-	if (muki == 3){//右向きなら
+		else if (map[y / 32 + 1][x / 32] == 4) {
+			floor_renew();
+			return 0;
+		}
+	}
+	if (muki == 3) {//右向きなら
 		if (map[y / 32][x / 32 + 1] == 1) {
 			return 1;
 		}
@@ -40,7 +67,15 @@ int IsAbleToGo(int x, int y, int muki) {//進めるかを判定する
 			enemy_event(); //進む先のmap[][]==2のとき、enemyとのイベント発生の関数呼び出し
 			return 1;
 		}
+		else if (map[y / 32][x / 32 + 1] == 3) {
+			item_event();
+			return 0;
 		}
+		else if (map[y / 32][x / 32 + 1] == 4) {
+			floor_renew();
+			return 0;
+		}
+	}
 	return 0;//正常
 
 

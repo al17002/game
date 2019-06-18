@@ -36,7 +36,6 @@
     <ClInclude Include="Title.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Actor.cpp" />
     <ClCompile Include="can_move.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EnemyMgr.cpp" />

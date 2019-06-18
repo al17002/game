@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\jikken"
+    "\\jikken",
+    "\\jikken\\x64\\Debug\\GameProg.tlog"
   ],
-  "SelectedNode": "\\jikken\\GameProg.vcxproj",
+  "SelectedNode": "\\jikken\\map.txt",
   "PreviewInSolutionExplorer": false
 }

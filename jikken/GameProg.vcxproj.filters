@@ -54,7 +54,10 @@
     <ClInclude Include="SaveSelect.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="newfloor.h">
+    <ClInclude Include="Actor.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="load_map.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
@@ -104,17 +107,6 @@
     <ClCompile Include="Savedata.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="newfloor.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="map.txt">
-      <Filter>リソース ファイル</Filter>
-    </Text>
-    <Text Include="map2.txt">
-      <Filter>リソース ファイル</Filter>
-    </Text>
   </ItemGroup>
   <ItemGroup>
     <None Include="new_savedata.dat">
