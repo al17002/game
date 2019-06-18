@@ -1,8 +1,3 @@
 #pragma once
-class hitJudgment
-{
-public:
-	hitJudgment();
-	~hitJudgment();
-};
 
+bool hitJudgment(int direction);
