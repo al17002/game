@@ -14,10 +14,10 @@ void output_savedata(int num){//セーブ
 		    fopen_s(&fp,"savedata1.dat", "wb");
             break;
         case 2:
-		    fopen_s(&fp, "savedata2.txt", "wb");
+		    fopen_s(&fp, "savedata2.dat", "wb");
             break;
         case 3:
-		    fopen_s(&fp, "savedata3.txt", "wb");
+		    fopen_s(&fp, "savedata3.dat", "wb");
             break;
         default:
 			fopen_s(&fp, "savedata1.dat", "wb");
@@ -77,11 +77,12 @@ void input_savedata(int num) {//ロード
     
 
     //fp=fopen("new_savedata.txt", "rb");
-    fopen_s(&fp, "savedata.dat", "rb");
+    //fopen_s(&fp, "savedata.dat", "rb");
 
 	for(i=0;i<10;i++){
         //fscanf(fp,"%d %d",&player_item.having_item[i].ID,&player_item.having_item[i].hp);
         fread(&player_item.having_item[i].ID,sizeof(int),1,fp);
+		fread(&player_item.having_item[i].atk,sizeof(int), 1, fp);
         fread(&player_item.having_item[i].hp,sizeof(int),1,fp);
     }
 
@@ -97,9 +98,10 @@ void input_savedata(int num) {//ロード
     fread(&player_item.stashednum,sizeof(int),1,fp);
     //fscanf(fp,"%d %d",&player_item.equipment.ID,&player_item.equipment.hp);
     fread(&player_item.equipment.ID,sizeof(int),1,fp);
+	fread(&player_item.equipment.atk, sizeof(int), 1, fp);
     fread(&player_item.equipment.hp,sizeof(int),1,fp);
     fclose(fp);
-    output_savedata(1);
+    
 }
 
 
@@ -121,9 +123,11 @@ void data_update(int event_id,int change_id,int item_hp,int change_num) {
 
     switch (event_id){
         case 0://get item
-            player.having_item[player.itemnum].ID=change_id;
-            player.having_item[player.itemnum].ID=item_hp;
-            player.itemnum+=change_num;
+			for (i = 0; i < change_num; i++) {
+				player.having_item[player.itemnum].ID = change_id;
+				player.having_item[player.itemnum].ID = item_hp;
+				player.itemnum += 1;
+			}
         break;
         case 1://hit enemy
             player.equipment.hp-=item_hp;
@@ -132,14 +136,9 @@ void data_update(int event_id,int change_id,int item_hp,int change_num) {
                 player.itemnum-=1;
             }
 
+
         break;
-        case 2://on the stairs
-            /*player.flore+=1;
-
-
-            */
-        break;
-
+        
     }
     
 	

@@ -116,4 +116,9 @@
       <Filter>リソース ファイル</Filter>
     </Text>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="new_savedata.dat">
+      <Filter>リソース ファイル</Filter>
+    </None>
+  </ItemGroup>
 </Project>

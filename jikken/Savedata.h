@@ -14,13 +14,16 @@ typedef struct item_desc{//アイテムの説明
 	string name;
     string explain;
     string effect;
+	int atk;
+	int hp;
 }item_desc;
 
 
-item_desc itemRef[100]; //[アイテムid]
+extern item_desc itemRef[100]; //[アイテムid]
 
 typedef struct item{
     int ID;
+	int atk;
     int hp;
 }item;
 
@@ -37,7 +40,6 @@ typedef struct player_data {
 	item having_item[10];
 	int itemnum;
 	item equipment;
-	int change_status; //装備による変化値
 	int y; //playerの座標
 	int x; 
 
