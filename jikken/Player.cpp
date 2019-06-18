@@ -55,12 +55,14 @@ void Player_Update() {
 			m_y++;
 		else if (muki == 3)        //右向きならch.x座標を増やす
 			m_x++;
-
 		if (m_x % 32 == 0 && m_y % 32 == 0) {
 			turn = false; //目的地に到着、ターンを渡す
 		}
 	}
 }
+
+void item_event() {}                                                     //仮の関数item_event
+void floor_renew() {}                                                   //仮の関数item_event
 
 // 描画する
 void Player_Draw() {
