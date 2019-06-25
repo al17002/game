@@ -1,3 +1,4 @@
-﻿  Savedata.cpp
-  LINK : 前回のインクリメンタル リンクで Z:\win\source\repos\game\jikken\x64\Debug\GameProg.exe が見つからなかったか、ビルドされませんでした。フル リンクを行います。
-  GameProg.vcxproj -> Z:\win\source\repos\game\jikken\x64\Debug\GameProg.exe
+﻿  SaveSelect.cpp
+  Title.cpp
+  コードを生成中...
+  GameProg.vcxproj -> C:\Users\al17002\source\repos\game\jikken\x64\Debug\GameProg.exe
