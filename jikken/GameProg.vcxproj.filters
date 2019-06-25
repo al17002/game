@@ -42,6 +42,9 @@
     <ClInclude Include="Enemy.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="load_map.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
     <ClInclude Include="Savedata.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>

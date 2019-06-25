@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <iostream>
 #include <string>
 
@@ -49,4 +49,3 @@ typedef struct player_data {
 
 extern player_item_data player_item; //グローバル変数
 extern player_data player;
-
