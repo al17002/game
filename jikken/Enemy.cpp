@@ -16,6 +16,10 @@ void Enemy_Initialize(Enemy_t *Enemy,int x, int y, int *img,int num) {
 	Enemy->x = x;		//xÀ•WŠi”[
 	Enemy->enemy_turn = false;
 	Enemy->num = num;
+	Enemy->equipment.ID = 1;
+	Enemy->equipment.hp = 1;
+	Enemy->equipment.atk = 1;
+
 }
 
 

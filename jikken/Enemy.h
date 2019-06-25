@@ -1,5 +1,5 @@
 #ifndef DEF_Enemy_H //“ñdinclude–h~
-
+#include "Savedata.h"
 #define DEF_Enemy_H
 
 typedef struct {
@@ -11,6 +11,7 @@ typedef struct {
 	int muki;
 	int walking_flag;
 	bool enemy_turn;
+	item equipment;
 } Enemy_t;
 
 // ‰Šú‰»‚ğ‚·‚é
