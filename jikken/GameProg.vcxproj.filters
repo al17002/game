@@ -57,6 +57,9 @@
     <ClInclude Include="SaveSelect.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="load_map.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
     <ClInclude Include="newfloor.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
