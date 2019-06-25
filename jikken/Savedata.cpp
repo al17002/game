@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include "Savedata.h"
 
 
@@ -23,9 +23,6 @@ void output_savedata(int num){//セーブ
 			fopen_s(&fp, "savedata1.dat", "wb");
             break;
 	}
-
-    //fp=fopen("savedata.txt","wb");
-    //fp=fopen("savedata.dat","wb");
 
 
     for(i=0;i<10;i++){
@@ -75,9 +72,6 @@ void input_savedata(int num) {//ロード
             break;
 	}
     
-
-    //fp=fopen("new_savedata.txt", "rb");
-    //fopen_s(&fp, "savedata.dat", "rb");
 
 	for(i=0;i<10;i++){
         //fscanf(fp,"%d %d",&player_item.having_item[i].ID,&player_item.having_item[i].hp);
@@ -129,11 +123,11 @@ void data_update(int event_id,int change_id,int item_hp,int change_num) {
 				player.itemnum += 1;
 			}
         break;
-        case 1://hit enemy
+        case 1://atkked enemy
             player.equipment.hp-=item_hp;
             if(player.equipment.hp==0){
                 player.equipment.ID=0;
-                player.itemnum-=1;
+				player.equipment.atk = 0;
             }
 
 

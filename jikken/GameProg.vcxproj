@@ -19,15 +19,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Actor.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemyMgr.h" />
     <ClInclude Include="EquipmentChange.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="hitJudgment.h" />
     <ClInclude Include="Keyboard.h" />
     <ClInclude Include="load_map.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="newfloor.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Save.h" />
     <ClInclude Include="Savedata.h" />
@@ -41,10 +42,12 @@
     <ClCompile Include="EnemyMgr.cpp" />
     <ClCompile Include="EquipmentChange.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="hitJudgment.cpp" />
     <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="newfloor.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Save.cpp" />
     <ClCompile Include="Savedata.cpp" />
@@ -59,7 +62,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{B7FE43BB-6897-4943-AA49-A828ECE78DA9}</ProjectGuid>
     <RootNamespace>GameProg</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
