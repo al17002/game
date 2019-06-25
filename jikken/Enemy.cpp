@@ -3,9 +3,11 @@
 #include "Enemy.h"
 #include "Map.h"
 #include "Game.h"
+#include "Savedata.h"
+#include "hitJudgment.h"
 
 // 初期化をする
-void Enemy_Initialize(Enemy_t *Enemy,int x, int y, int *img) {
+void Enemy_Initialize(Enemy_t *Enemy,int x, int y, int *img,int num) {
 	for (int i = 0; i < 16; i++) {
 		Enemy->Image[i] = img[i];
 	}
@@ -13,7 +15,7 @@ void Enemy_Initialize(Enemy_t *Enemy,int x, int y, int *img) {
 	Enemy->y = y;      //y座標格納
 	Enemy->x = x;		//x座標格納
 	Enemy->enemy_turn = false;
-	
+	Enemy->num = num;
 }
 
 
@@ -23,23 +25,33 @@ void Enemy_Update(Enemy_t *Enemy) {
 		Enemy->walking_flag = 0;         //歩かないフラグを立てる。
 		if (!Enemy->enemy_turn) {//ターンがある（エネミー)
 			Enemy->walking_flag = 1;
-			if (Keyboard_Get(KEY_INPUT_UP) == 1)  //上ボタンが押されたら
+			if (player.y<Enemy->y&& (IsAbleToGo(Enemy->x, Enemy->y, 0) != 1))  //上ボタンが押されたら
 				Enemy->muki = 0;         //上向きフラグを立てる
-			else if (Keyboard_Get(KEY_INPUT_LEFT) == 1)  //左ボタンが押されたら
+			else if (player.x < Enemy->x && (IsAbleToGo(Enemy->x, Enemy->y, 1) != 1))  //左ボタンが押されたら
 				Enemy->muki = 1;         //左向きフラグを立てる
-			else if (Keyboard_Get(KEY_INPUT_DOWN) == 1)  //下ボタンが押されたら
+			else if (player.y > Enemy->y && (IsAbleToGo(Enemy->x, Enemy->y, 2) != 1))  //下ボタンが押されたら
 				Enemy->muki = 2;         //下向きフラグを立てる
-			else if (Keyboard_Get(KEY_INPUT_RIGHT) == 1)  //右ボタンが押されたら
+			else if (player.x > Enemy->x && (IsAbleToGo(Enemy->x, Enemy->y, 3) != 1))  //右ボタンが押されたら
 				Enemy->muki = 3;         //右向きフラグを立てる
 			else                                    //何のボタンも押されてなかったら
-				Enemy->walking_flag = 0; //歩かないフラグを立てる
+				Enemy->walking_flag = 1; //まあ頑張って左に歩くフラグを立てる
 		}
-		if (Enemy->walking_flag == 1)
+		if (Enemy->walking_flag == 1) {
+			int hitcheck = hitJudgment(Enemy->muki, Enemy->num);
+			if (hitcheck == -1) {//プレイヤーに当たった
+				Enemy->walking_flag = 0;
+				//event_attack(Enemy->num);
+				Enemy->enemy_turn = true;
+			}
+			else if (hitcheck != -2) {
+				Enemy->walking_flag = 0;
+				Enemy->enemy_turn = true;
+			}
 			if (IsAbleToGo(Enemy->x, Enemy->y, Enemy->muki) == 1) {
 				Enemy->walking_flag = 0;
 				Enemy->enemy_turn = true;
 			}
-
+		}
 	}
 
 	if (Enemy->walking_flag == 1) {//歩くフラグが立っていたら
@@ -60,7 +72,7 @@ void Enemy_Update(Enemy_t *Enemy) {
 // 描画する
 void Enemy_Draw(Enemy_t Enemy) {
 	Enemy.m_Image = Enemy.Image[(Enemy.x % 32 + Enemy.y % 32) / 8 + Enemy.muki * 4];
-	DrawGraph(Enemy.x, Enemy.y, Enemy.m_Image, TRUE);
+	DrawGraph(Enemy.x, Enemy.y, Enemy.m_Image, true);
 }
 
 // 終了処理をする

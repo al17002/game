@@ -4,6 +4,7 @@
 #include "Map.h"
 #include "Game.h"
 #include "Savedata.h"
+#include "hitJudgment.h"
 
 // このファイル内でしか使えないグローバル変数
 static int m_Image; //画像ハンドル
@@ -37,11 +38,18 @@ void Player_Update() {
 			else                                    //何のボタンも押されてなかったら
 				walking_flag = 0; //歩かないフラグを立てる
 
-			if (walking_flag == 1)
+			if (walking_flag == 1) {
+				int hitcheck = hitJudgment(muki, -1);
+				if (hitcheck != -2) {
+					walking_flag = 0;
+					//event_attack(hitcheck);
+					turn = false;
+				}
 				if (IsAbleToGo(player.x, player.y, muki) == 1) {
 					walking_flag = 0;
 					turn = false;
 				}
+			}
 		}
 	}
 

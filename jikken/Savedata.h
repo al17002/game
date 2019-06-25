@@ -8,7 +8,7 @@ void output_savedata(int num);
 void input_savedata(int num);
 int get_equipment();
 void move_player(int move_x, int move_y);
-void data_update(int event_id, int change_id, int item_hp, int change_num);
+void add_item(int n);
 
 typedef struct item_desc{//アイテムの説明
 	char name[256];
@@ -19,7 +19,7 @@ typedef struct item_desc{//アイテムの説明
 }item_desc;
 
 
-extern item_desc itemRef[100]; //[アイテムid]
+extern item_desc itemRef[100]; //[アイテムid] mapからうけとったデータに関して-10をもちいて使用する
 
 typedef struct item{
     int ID;

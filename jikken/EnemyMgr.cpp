@@ -4,9 +4,9 @@
 #include "Map.h"
 #include "Game.h"
 
-static const int NUM = 2;        //“G‚Ì”
+static const int NUM = 10;        //“G‚Ì”
 
-static Enemy_t m_Enemy[NUM];   //“G‚ÌÀ‘Ì
+Enemy_t m_Enemy[NUM];   //“G‚ÌÀ‘Ì
 static int m_ImgEnemy;          //“G‚Ì‰æ‘œƒnƒ“ƒhƒ‹
 static int image[16];
 
@@ -16,8 +16,8 @@ static bool check = false;
 // ‰Šú‰»‚ğ‚·‚é
 void EnemyMgr_Initialize() {
 	LoadDivGraph("‰æ‘œ/ƒLƒƒƒ‰ƒNƒ^10.png", 16, 4, 4, 32, 32, image);
-	Enemy_Initialize(&m_Enemy[0], 288,320, image);// ‰Šú‰»
-	Enemy_Initialize(&m_Enemy[1], 320,320, image);// ‰Šú‰»
+	Enemy_Initialize(&m_Enemy[0], 288,320, image, 0);// ‰Šú‰»
+	Enemy_Initialize(&m_Enemy[1], 320,320, image, 1);// ‰Šú‰»
 }
 
 // “®‚«‚ğŒvZ‚·‚é

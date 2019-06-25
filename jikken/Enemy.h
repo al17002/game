@@ -3,6 +3,7 @@
 #define DEF_Enemy_H
 
 typedef struct {
+	int num;
 	int Image[16];
 	int m_Image;
 	int y;
@@ -13,7 +14,7 @@ typedef struct {
 } Enemy_t;
 
 // ‰Šú‰»‚ğ‚·‚é
-void Enemy_Initialize(Enemy_t *Enemy,int x, int y, int *img);
+void Enemy_Initialize(Enemy_t *Enemy,int x, int y, int *img, int num);
 
 // “®‚«‚ğŒvZ‚·‚é
 void Enemy_Update(Enemy_t *Enemy);
@@ -23,5 +24,7 @@ void Enemy_Draw(Enemy_t Enemy);
 
 // I—¹ˆ—‚ğ‚·‚é
 void Enemy_Finalize(Enemy_t Enemy);
+
+extern Enemy_t m_Enemy[];
 
 #endif
