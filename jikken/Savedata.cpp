@@ -1,9 +1,11 @@
 ﻿#include <iostream>
 #include "Savedata.h"
+#include "enemy.h"
 
 
 player_item_data player_item;//グローバル変数
 player_data player;
+Enemy_t Enemy[];
 
 void output_savedata(int num){//セーブ
     int i;
@@ -19,11 +21,7 @@ void output_savedata(int num){//セーブ
         case 3:
 		    fopen_s(&fp, "savedata3.dat", "wb");
             break;
-        default:
-			fopen_s(&fp, "savedata1.dat", "wb");
-            break;
 	}
-
 
     for(i=0;i<10;i++){
         fwrite(&player_item.having_item[i].ID,sizeof(int),1,fp);
@@ -61,6 +59,9 @@ void input_savedata(int num) {//ロード
         case 2:
 		    fopen_s(&fp, "savedata2.dat", "rb");
             break;
+		case 3:
+			fopen_s(&fp, "savedata3.dat", "rb");
+			break;
         default:
 		    fopen_s(&fp, "new_savedata.dat", "rb");
             break;
@@ -68,23 +69,19 @@ void input_savedata(int num) {//ロード
     
 
 	for(i=0;i<10;i++){
-        //fscanf(fp,"%d %d",&player_item.having_item[i].ID,&player_item.having_item[i].hp);
         fread(&player_item.having_item[i].ID,sizeof(int),1,fp);
 		fread(&player_item.having_item[i].atk,sizeof(int), 1, fp);
         fread(&player_item.having_item[i].hp,sizeof(int),1,fp);
     }
 
-    //fscanf(fp,"%d",&player_item.itemnum);
     fread(&player_item.itemnum,sizeof(int),1,fp);
 
     for(i=0;i<100;i++){
-        //fscanf(fp,"%d",&player_item.stashed_item[i]);
+
         fread(&player_item.stashed_item[i],sizeof(int),1,fp);
     }
 
-    //fscanf(fp,"%d",&player_item.stashednum);
     fread(&player_item.stashednum,sizeof(int),1,fp);
-    //fscanf(fp,"%d %d",&player_item.equipment.ID,&player_item.equipment.hp);
     fread(&player_item.equipment.ID,sizeof(int),1,fp);
 	fread(&player_item.equipment.atk, sizeof(int), 1, fp);
     fread(&player_item.equipment.hp,sizeof(int),1,fp);
@@ -122,7 +119,9 @@ void move_player(int move_x,int move_y){
 	player.y += move_y;
 }
 
-
+void hit_enemy(int enemy_id) {
+	//player.equipment -= Enemy[enemy_id].atk;
+}
 
 void add_item(int n) {
 
