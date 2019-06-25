@@ -127,7 +127,7 @@ void data_update(int event_id,int change_id,int item_hp,int change_num) {
             player.equipment.hp-=item_hp;
             if(player.equipment.hp==0){
                 player.equipment.ID=0;
-                player.itemnum-=1;
+				player.equipment.atk = 0;
             }
 
 

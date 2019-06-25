@@ -11,9 +11,9 @@ void move_player(int move_x, int move_y);
 void data_update(int event_id, int change_id, int item_hp, int change_num);
 
 typedef struct item_desc{//アイテムの説明
-	string name;
-    string explain;
-    string effect;
+	char name[256];
+    char explain[256];
+    char effect[256];
 	int atk;
 	int hp;
 }item_desc;
