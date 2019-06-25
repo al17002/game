@@ -1,3 +1,4 @@
-﻿  EquipmentChange.cpp
-c:\users\al17002\source\repos\game\jikken\equipmentchange.cpp(69): warning C4101: 'change': ローカル変数は 1 度も使われていません。
+﻿  SaveSelect.cpp
+  Title.cpp
+  コードを生成中...
   GameProg.vcxproj -> C:\Users\al17002\source\repos\game\jikken\x64\Debug\GameProg.exe
