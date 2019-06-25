@@ -26,33 +26,27 @@ void output_savedata(int num){//セーブ
 
 
     for(i=0;i<10;i++){
-        //fprintf(fp,"%d %d ",player_item.having_item[i].ID,player_item.having_item[i].hp);
         fwrite(&player_item.having_item[i].ID,sizeof(int),1,fp);
+		fwrite(&player_item.having_item[i].atk, sizeof(int), 1, fp);
         fwrite(&player_item.having_item[i].hp,sizeof(int),1,fp);
-
     }
-    //fprintf(fp,"\n");
-    //fprintf(fp,"%d",player_item.itemnum);
+
     fwrite(&player_item.itemnum,sizeof(int),1,fp);
-    //fprintf(fp,"\n");
 
     for(i=0;i<100;i++){
-        //fprintf(fp,"%d ",player_item.stashed_item[i]);
+
         fwrite(&player_item.stashed_item[i],sizeof(int),1,fp);
-        //if((i+1)%10==0)fprintf(fp,"\n");
     }
-    //fprintf(fp,"%d ",player_item.stashednum);
+
     fwrite(&player_item.stashednum,sizeof(int),1,fp);
-    //fprintf(fp,"\n");
-    //fprintf(fp,"%d %d",player_item.equipment.ID,player_item.equipment.hp);
     fwrite(&player_item.equipment.ID,sizeof(int),1,fp);
+	fwrite(&player_item.equipment.atk, sizeof(int), 1, fp);
     fwrite(&player_item.equipment.hp,sizeof(int),1,fp);
     
 
     fclose(fp);
 
 }
-
 
 
 void input_savedata(int num) {//ロード
@@ -98,6 +92,23 @@ void input_savedata(int num) {//ロード
     
 }
 
+void dataflow() {
+
+	int i;
+
+	for (i = 0; i < 10; i++) {
+		player.having_item[i].ID = player_item.having_item[i].ID;
+		player.having_item[i].atk = player_item.having_item[i].atk;
+		player.having_item[i].hp = player_item.having_item[i].hp;
+	}
+
+	player.itemnum = player_item.itemnum;
+
+
+	player.equipment.ID = player_item.equipment.ID;
+	player.equipment.atk = player_item.equipment.atk;
+	player.equipment.hp = player_item.equipment.hp;
+}
 
 
 int get_equipment() {
@@ -111,29 +122,17 @@ void move_player(int move_x,int move_y){
 	player.y += move_y;
 }
 
-void data_update(int event_id,int change_id,int item_hp,int change_num) {
-	int i;
-	//event_idの使いどころは未定
-
-    switch (event_id){
-        case 0://get item
-			for (i = 0; i < change_num; i++) {
-				player.having_item[player.itemnum].ID = change_id;
-				player.having_item[player.itemnum].ID = item_hp;
-				player.itemnum += 1;
-			}
-        break;
-        case 1://atkked enemy
-            player.equipment.hp-=item_hp;
-            if(player.equipment.hp==0){
-                player.equipment.ID=0;
-				player.equipment.atk = 0;
-            }
 
 
-        break;
-        
-    }
-    
-	
+void add_item(int n) {
+
+	if (player.itemnum == 10) {
+
+	}
+	else {
+		//player.having_item[player.itemnum].ID = change_id;
+		//player.having_item[player.itemnum].ID = item_hp;
+		player.itemnum += 1;
+	}
+
 }

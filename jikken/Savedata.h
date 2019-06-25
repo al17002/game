@@ -19,7 +19,7 @@ typedef struct item_desc{//アイテムの説明
 }item_desc;
 
 
-extern item_desc itemRef[100]; //[アイテムid]
+extern item_desc itemRef[100]; //[アイテムid] mapからうけとったデータに関して-10をもちいて使用する
 
 typedef struct item{
     int ID;
