@@ -6,10 +6,10 @@
 //更新
 void Title_Update() {
 	if (CheckHitKey(KEY_INPUT_H) != 0) { //Hキーが押されたら
+		input_savedata(0);
 		SceneMgr_ChangeScene(eScene_Game);//はじめから
 	}
 	if (CheckHitKey(KEY_INPUT_C) != 0) { //Cキーが押されたら
-		input_savedata(0);
 		SceneMgr_ChangeScene(eScene_SaveSelect);//続きから
 	}
 }
