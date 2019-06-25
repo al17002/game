@@ -1,5 +1,1 @@
-﻿  Map.cpp
-c:\users\al17010\source\repos\game\jikken\map.cpp : warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-c:\users\al17010\source\repos\game\jikken\map.cpp(79): warning C4101: 'end': ローカル変数は 1 度も使われていません。
-Menu.obj : error LNK2019: 未解決の外部シンボル "void __cdecl floor_renew(int)" (?floor_renew@@YAXH@Z) が関数 "void __cdecl Menu_Update(void)" (?Menu_Update@@YAXXZ) で参照されました。
-C:\Users\al17010\source\repos\game\jikken\x64\Debug\GameProg.exe : fatal error LNK1120: 1 件の未解決の外部参照
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.Cpp.WindowsSDK.targets(46,5): error MSB8036: Windows SDK バージョン 10.0.16299.0 が見つかりませんでした。必要なバージョンの Windows SDK をインストールするか、プロジェクト プロパティ ページで SDK バージョンを変更するか、ソリューションを右クリックして [ソリューションの再ターゲット] を選択してください。
