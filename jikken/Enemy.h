@@ -10,6 +10,7 @@ typedef struct {
 	int x;
 	int muki;
 	int walking_flag;
+	item equipment;
 	bool enemy_turn;
 } Enemy_t;
 
