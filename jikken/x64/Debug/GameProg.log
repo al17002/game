@@ -1,1 +1,16 @@
-﻿  GameProg.vcxproj -> Z:\win\source\repos\game\jikken\x64\Debug\GameProg.exe
+﻿  Map.cpp
+c:\users\al17010\source\repos\game\jikken\map.cpp : warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+c:\users\al17010\source\repos\game\jikken\map.cpp(11): error C3861: 'additem': 識別子が見つかりませんでした
+c:\users\al17010\source\repos\game\jikken\map.cpp(24): error C2001: 定数が 2 行目に続いています。
+c:\users\al17010\source\repos\game\jikken\map.cpp(25): error C2143: 構文エラー: ')' が 'return' の前にありません。
+c:\users\al17010\source\repos\game\jikken\map.cpp(25): error C2143: 構文エラー: ';' が 'return' の前にありません。
+c:\users\al17010\source\repos\game\jikken\map.cpp(27): warning C4805: '==': 演算中の 'int' 型と 'bool' 型の混用は安全ではありません
+c:\users\al17010\source\repos\game\jikken\map.cpp(40): error C2001: 定数が 2 行目に続いています。
+c:\users\al17010\source\repos\game\jikken\map.cpp(41): error C2143: 構文エラー: ')' が 'return' の前にありません。
+c:\users\al17010\source\repos\game\jikken\map.cpp(41): error C2143: 構文エラー: ';' が 'return' の前にありません。
+c:\users\al17010\source\repos\game\jikken\map.cpp(56): error C2001: 定数が 2 行目に続いています。
+c:\users\al17010\source\repos\game\jikken\map.cpp(57): error C2143: 構文エラー: ')' が 'return' の前にありません。
+c:\users\al17010\source\repos\game\jikken\map.cpp(57): error C2143: 構文エラー: ';' が 'return' の前にありません。
+c:\users\al17010\source\repos\game\jikken\map.cpp(70): error C2001: 定数が 2 行目に続いています。
+c:\users\al17010\source\repos\game\jikken\map.cpp(71): error C2143: 構文エラー: ')' が 'return' の前にありません。
+c:\users\al17010\source\repos\game\jikken\map.cpp(71): error C2143: 構文エラー: ';' が 'return' の前にありません。
