@@ -1,7 +1,2 @@
 ﻿  Game.cpp
-  Map.cpp
-c:\users\al17002\source\repos\game\jikken\map.cpp : warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-c:\users\al17002\source\repos\game\jikken\map.cpp(106): warning C4101: 'end': ローカル変数は 1 度も使われていません。
-  Savedata.cpp
-  コードを生成中...
-c:\users\al17002\source\repos\game\jikken\savedata.cpp(27): error C4703: 初期化されていない可能性のあるローカル ポインター変数 'fp' が使用されています
+  GameProg.vcxproj -> C:\Users\al16038\source\repos\game\jikken\x64\Debug\GameProg.exe

@@ -21,6 +21,9 @@ void output_savedata(int num){//セーブ
         case 3:
 		    fopen_s(&fp, "savedata3.dat", "wb");
             break;
+		default:
+			fopen_s(&fp, "savedata1.dat", "wb");
+			break;
 	}
 
     for(i=0;i<10;i++){
@@ -120,7 +123,7 @@ void move_player(int move_x,int move_y){
 }
 
 void hit_enemy(int enemy_id) {
-	//player.equipment -= Enemy[enemy_id].atk;
+	player.equipment.hp -= m_Enemy[enemy_id].
 }
 
 void add_item(int n) {
