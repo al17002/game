@@ -21,6 +21,9 @@ void output_savedata(int num){//セーブ
         case 3:
 		    fopen_s(&fp, "savedata3.dat", "wb");
             break;
+		default:
+			fopen_s(&fp, "savedata1.dat", "wb");
+			break;
 	}
 
     for(i=0;i<10;i++){
