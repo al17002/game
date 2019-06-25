@@ -42,8 +42,6 @@ int IsAbleToGo(int x, int y, int muki) {//進めるかを判定する
 		}
 		}
 	return 0;//正常
-
-
 }
 
 

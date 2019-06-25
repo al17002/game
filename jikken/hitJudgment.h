@@ -1,3 +1,3 @@
 #pragma once
 
-bool hitJudgment(int direction);
+int hitJudgment(int direction, int myNum);
