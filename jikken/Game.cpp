@@ -5,6 +5,7 @@
 #include "Keyboard.h"
 #include "Map.h"
 #include "EnemyMgr.h"
+#include "Savedata.h"
 
 bool turn = true;//ターン(Global) True = player false = enemy
 
@@ -30,6 +31,8 @@ void Game_Update() {
 
 //描画
 void Game_Draw() {
-	DrawString(0, 40, "ゲーム画面です。", GetColor(255, 255, 255));
-	DrawString(0, 60, "Escキーを押すとメニュー画面に戻ります。", GetColor(255, 255, 255));
+	DrawString(1250, 40, "ゲーム画面", GetColor(255, 255, 255));
+	DrawFormatString(1250, 60, GetColor(255, 255, 255), "Escキーを押すと\nメニュー画面に戻ります。");
+	DrawFormatString(1250, 100, GetColor(255, 255, 255), "現在は%d階層目です",1);
+	DrawFormatString(1250, 150, GetColor(255, 255, 255), "装備中:%d atk: %d hp: %d", player_item.equipment.ID, player_item.equipment.atk, player_item.equipment.hp);
 }
