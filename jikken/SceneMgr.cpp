@@ -7,6 +7,7 @@
 #include "SaveSelect.h"
 #include "Save.h"
 #include "EquipmentChange.h"
+#include "WareHouse.h"
 
 static eScene Scene = eScene_Title;    //ƒV[ƒ“ŠÇ—•Ï”
 
@@ -31,6 +32,9 @@ void SceneMgr_Update() {
 	case eScene_EquipmentChange:
 		EquipmentChange_Update();
 		break;
+	case eScene_WareHouse:
+		WareHouse_Update();
+		break;
 	}
 }
 
@@ -54,6 +58,9 @@ void SceneMgr_Draw() {
 		break;
 	case eScene_EquipmentChange:
 		EquipmentChange_Draw();
+		break;
+	case eScene_WareHouse:
+		WareHouse_Draw();
 		break;
 	}
 
