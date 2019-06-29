@@ -17,6 +17,9 @@ void Menu_Update() {
 	if (CheckHitKey(KEY_INPUT_N) != 0) {
 		floor_renew(2);
 	}
+	if (CheckHitKey(KEY_INPUT_Z) != 0) {
+		DxLib_End();
+	}
 }
 
 //•`‰æ

@@ -1,6 +1,7 @@
 #include "Map.h"
 #include "DxLib.h"
 
+static int image_floor;
 static int map[32][40] = {};
 
 
@@ -73,6 +74,9 @@ int IsAbleToGo(int x, int y, int muki) {//進めるかを判定する
 	return 0;//正常
 }
 
+void Floor_Initialize() {
+	image_floor=LoadGraph("画像/階段.png");
+}
 
 void Map_Draw() {
 	for (int i = 0; i < 32; i++)
@@ -81,9 +85,13 @@ void Map_Draw() {
 				DrawBox(j * 32, i * 32, (j + 1) * 32, (i + 1) * 32, GetColor(255, 255, 255), TRUE);
 			else if(map[i][j] == 2)
 				DrawBox(j * 32, i * 32, (j + 1) * 32, (i + 1) * 32, GetColor(0, 255, 0), TRUE);
-			else if (map[i][j] == 3)
-				DrawBox(j * 32, i * 32, (j + 1) * 32, (i + 1) * 32, GetColor(255, 0, 0), TRUE);
+			else if (map[i][j]<=9 && map[i][j] >= 2)
+				DrawBox(j * 32, i * 32, (j + 1) * 32, (i + 1) * 32, GetColor(128, 128, 128), TRUE);
+				//DrawGraph(j * 32, i * 32, image_floor, TRUE);
+			else if (map[i][j] >= 10)
+				DrawBox(j * 32, i * 32, (j + 1) * 32, (i + 1) * 32, GetColor(255, 255, 0), TRUE);
 }
+
 
 void load_map(int map_id) {
 	int i = 0, j = 0;
