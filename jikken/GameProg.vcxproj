@@ -60,6 +60,8 @@
   <ItemGroup>
     <None Include="new_savedata.dat" />
     <None Include="savedata1.dat" />
+    <None Include="savedata2.dat" />
+    <None Include="savedata3.dat" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
