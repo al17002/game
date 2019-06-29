@@ -14,9 +14,6 @@ void Menu_Update() {
 	if (CheckHitKey(KEY_INPUT_T) != 0) {
 			SceneMgr_ChangeScene(eScene_Title);
 	}
-	if (CheckHitKey(KEY_INPUT_S) != 0) {
-		SceneMgr_ChangeScene(eScene_Save);
-	}
 	if (CheckHitKey(KEY_INPUT_N) != 0) {
 		floor_renew(2);
 	}
@@ -28,8 +25,7 @@ void Menu_Draw() {
 	DrawString(20, 20, "メニュー", GetColor(255, 255, 255));
 	DrawString(20, 40, "G:ゲーム画面に戻る", GetColor(255, 255, 255));
 	DrawString(20, 60, "H:装備変更", GetColor(255, 255, 255));
-	DrawString(20, 80, "S:セーブデータ保存", GetColor(255, 255, 255));
-	DrawString(20, 100, "T:タイトルに戻る", GetColor(255, 255, 255));
+	DrawString(20, 80, "T:タイトルに戻る", GetColor(255, 255, 255));
 	DrawString(20, 160, "装備情報", GetColor(255, 255, 255));
 	//s = "キャラクタ管理部の関数";
 	DrawFormatString(20, 180, GetColor(255, 255, 255), "装備中:%d atk:%d hp:%d", player_item.equipment.ID, player_item.equipment.atk, player_item.equipment.hp);
