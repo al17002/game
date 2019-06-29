@@ -123,7 +123,7 @@ void move_player(int move_x,int move_y){
 }
 
 void hit_enemy(int enemy_id) {
-	player.equipment.hp -= m_Enemy[enemy_id].
+	//player.equipment.hp -= m_Enemy[enemy_id].
 }
 
 void add_item(int n) {

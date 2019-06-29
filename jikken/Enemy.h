@@ -1,6 +1,9 @@
 #ifndef DEF_Enemy_H //“ñdinclude–h~
 
 #define DEF_Enemy_H
+#include "Savedata.h"
+
+
 
 typedef struct {
 	int num;
