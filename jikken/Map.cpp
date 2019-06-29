@@ -10,7 +10,8 @@ void additem(int n){
 }
 
 void item_event(int n) {
-	additem(n);
+
+	add_item(n);
 }
 
 void floor_event(int n) {
@@ -28,6 +29,7 @@ int IsAbleToGo(int x, int y, int muki) {//進めるかを判定する
 		}
 		else if (map[y / 32 - 1][x / 32] >= 10) {
 			item_event(map[y / 32 - 1][x / 32]); //進む先のmap[][]==10のとき、item_event関数呼び出し
+			map[y / 32 - 1][x / 32] = 0;
 			return 0;
 		}
 	}
@@ -41,6 +43,7 @@ int IsAbleToGo(int x, int y, int muki) {//進めるかを判定する
 		}
 		else if (map[y / 32 ][x / 32 - 1] >= 10) {
 			item_event(map[y / 32][x / 32 - 1]);
+			map[y / 32 ][x / 32 - 1] = 0;
 			return 0;
 		}
 	}
@@ -55,6 +58,7 @@ int IsAbleToGo(int x, int y, int muki) {//進めるかを判定する
 		}
 		else if (map[y / 32 + 1][x / 32] >= 10) {
 			item_event(map[y / 32 + 1][x / 32]);
+			map[y / 32 + 1][x / 32] = 0;
 			return 0;
 		}
 	}
@@ -68,6 +72,7 @@ int IsAbleToGo(int x, int y, int muki) {//進めるかを判定する
 		}
 		else if (map[y / 32][x / 32 + 1] >= 10) {
 			item_event(map[y / 32][x / 32 + 1]);
+			map[y / 32 ][x / 32 + 1] = 0;
 			return 0;
 		}
 	}

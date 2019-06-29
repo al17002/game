@@ -3,6 +3,7 @@
 #include "DxLib.h"
 #include "newfloor.h"
 #include "savedata.h"
+
 //更新
 void Menu_Update() {
 	if (CheckHitKey(KEY_INPUT_G) != 0) {//Gキーが押されていたら
@@ -37,6 +38,6 @@ void Menu_Draw() {
 	//s = "キャラクタ管理部の関数";
 	DrawFormatString(20, 180, GetColor(255, 255, 255), "装備中:%d atk:%d hp:%d", player_item.equipment.ID, player_item.equipment.atk, player_item.equipment.hp);
 	for (i = 0; i < 10; i++) {//範囲はplayer_item.itemnum
-		DrawFormatString(20, 200 + 20 * i, GetColor(255, 255, 255), "%d:%d atk:%d hp:%d", i, player_item.having_item[i].ID, player_item.having_item[i].atk, player_item.having_item[i].hp);
+		DrawFormatString(20, 200 + 20 * i, GetColor(255, 255, 255), "%d:%d atk:%d hp:%d", i, player.having_item[i].ID, player.having_item[i].atk, player.having_item[i].hp);
 	}
 }

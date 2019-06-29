@@ -132,8 +132,9 @@ void add_item(int n) {
 
 	}
 	else {
-		//player.having_item[player.itemnum].ID = change_id;
-		//player.having_item[player.itemnum].ID = item_hp;
+		player.having_item[player.itemnum].ID = n-10;
+		player.having_item[player.itemnum].atk = 1;
+		player.having_item[player.itemnum].hp = 1;
 		player.itemnum += 1;
 	}
 
