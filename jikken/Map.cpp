@@ -83,11 +83,10 @@ void Map_Draw() {
 		for (int j = 0; j < 40; j++)
 			if (map[i][j] == 1)
 				DrawBox(j * 32, i * 32, (j + 1) * 32, (i + 1) * 32, GetColor(255, 255, 255), TRUE);
-			else if(map[i][j] == 2)
-				DrawBox(j * 32, i * 32, (j + 1) * 32, (i + 1) * 32, GetColor(0, 255, 0), TRUE);
-			else if (map[i][j]<=9 && map[i][j] >= 2)
-				DrawBox(j * 32, i * 32, (j + 1) * 32, (i + 1) * 32, GetColor(128, 128, 128), TRUE);
-				//DrawGraph(j * 32, i * 32, image_floor, TRUE);
+			else if (map[i][j] <= 9 && map[i][j] >= 2)
+				//DrawBox(j * 32, i * 32, (j + 1) * 32, (i + 1) * 32, GetColor(128, 128, 128), TRUE);
+				//DrawGraph(j * 32, i * 32,image_floor, TRUE);
+				DrawFormatString(1250, 100, GetColor(255, 255, 255), "Escキーを押すと\nメニュー画面に戻ります。%d",image_floor);
 			else if (map[i][j] >= 10)
 				DrawBox(j * 32, i * 32, (j + 1) * 32, (i + 1) * 32, GetColor(255, 255, 0), TRUE);
 }
