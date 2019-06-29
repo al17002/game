@@ -15,7 +15,7 @@ static bool check = false;
 
 // 初期化をする
 void EnemyMgr_Initialize() {
-	LoadDivGraph("画像/キャラクタ10.png", 16, 4, 4, 32, 32, image);
+	LoadDivGraph("画像/キャラクタ11.png", 16, 4, 4, 32, 32, image);
 	Enemy_Initialize(&m_Enemy[0], 288,320, image, 0);// 初期化
 	Enemy_Initialize(&m_Enemy[1], 320,320, image, 1);// 初期化
 }
