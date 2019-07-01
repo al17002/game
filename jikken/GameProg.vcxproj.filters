@@ -142,5 +142,11 @@
     <None Include="savedata3.dat">
       <Filter>リソース ファイル</Filter>
     </None>
+    <None Include="item.dat">
+      <Filter>リソース ファイル</Filter>
+    </None>
+    <None Include="itemdata.dat">
+      <Filter>リソース ファイル</Filter>
+    </None>
   </ItemGroup>
 </Project>

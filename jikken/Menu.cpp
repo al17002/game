@@ -4,6 +4,7 @@
 #include "newfloor.h"
 #include "savedata.h"
 
+
 //更新
 void Menu_Update() {
 	if (CheckHitKey(KEY_INPUT_G) != 0) {//Gキーが押されていたら
