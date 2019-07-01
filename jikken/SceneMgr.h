@@ -7,6 +7,7 @@ typedef enum {
 	eScene_SaveSelect, //セーブデータ決定画面
 	eScene_Save, //セーブデータ保存
 	eScene_EquipmentChange, //装備変更
+	eScene_WareHouse,
 } eScene;
 
 //更新
