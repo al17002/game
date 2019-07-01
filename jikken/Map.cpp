@@ -90,7 +90,7 @@ int IsAbleToGo(int x, int y, int muki) {
 }
 
 void Floor_Initialize() {
-	image_floor=LoadGraph("画像/階段.png");
+	//image_floor=LoadGraph("画像/階段.png");
 }
 
 //描画
