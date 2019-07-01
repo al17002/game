@@ -2,65 +2,67 @@
 #include "SceneMgr.h"
 #include "DxLib.h"
 #include "savedata.h"
+#include "Keyboard.h"
 //更新
 void EquipmentChange_Update() {
 	player_data change;
 	change = player;
-	if (CheckHitKey(KEY_INPUT_M) != 0) { //Mを選択
+	Keyboard_Update();
+	if (Keyboard_Get(KEY_INPUT_M) == 1) { //Mを選択
 		SceneMgr_ChangeScene(eScene_Menu);//メニューに戻る
 	}
-	if (CheckHitKey(KEY_INPUT_T) != 0) { //Tを選択
+	else if (Keyboard_Get(KEY_INPUT_T) == 1) { //Tを選択
 		SceneMgr_ChangeScene(eScene_Title);//タイトルに戻る
 	}
-	if (CheckHitKey(KEY_INPUT_0) != 0) { //0を選択
+	else if (Keyboard_Get(KEY_INPUT_0) == 1) { //0を選択
 		player.equipment = player.having_item[0];
-		player_item.having_item[0] = change.equipment;
-		SceneMgr_ChangeScene(eScene_EquipmentChange);//現在の装備と0の装備を入れ替える
+		player.having_item[0] = change.equipment;
+		//現在の装備と0の装備を入れ替える
 	}
-	if (CheckHitKey(KEY_INPUT_1) != 0) { //1を選択
+	else if (Keyboard_Get(KEY_INPUT_1) == 1) { //1を選択
 		player.equipment = player.having_item[1];
 		player.having_item[1] = change.equipment;
-		SceneMgr_ChangeScene(eScene_EquipmentChange);//現在の装備と1の装備を入れ替える
+		//現在の装備と1の装備を入れ替える
 	}
-	if (CheckHitKey(KEY_INPUT_2) != 0) { //2を選択
+	else if (Keyboard_Get(KEY_INPUT_2) == 1) { //2を選択
 		player.equipment = player.having_item[2];
 		player.having_item[2] = change.equipment;
-		SceneMgr_ChangeScene(eScene_EquipmentChange);//現在の装備と2の装備を入れ替える
+		//現在の装備と2の装備を入れ替える
 	}
-	if (CheckHitKey(KEY_INPUT_3) != 0) { //3を選択
+	else if (Keyboard_Get(KEY_INPUT_3) == 1) { //3を選択
 		player.equipment = player.having_item[3];
 		player.having_item[3] = change.equipment;
-		SceneMgr_ChangeScene(eScene_EquipmentChange);//現在の装備と3の装備を入れ替える
+		//現在の装備と3の装備を入れ替える
 	}
-	if (CheckHitKey(KEY_INPUT_4) != 0) { //4を選択
+	else if (Keyboard_Get(KEY_INPUT_4) == 1) { //4を選択
 		player.equipment = player.having_item[4];
 		player.having_item[4] = change.equipment;
-		SceneMgr_ChangeScene(eScene_EquipmentChange);//現在の装備と4の装備を入れ替える
+		//現在の装備と4の装備を入れ替える
 	}
-	if (CheckHitKey(KEY_INPUT_5) != 0) { //5を選択
+	else if (Keyboard_Get(KEY_INPUT_5) == 1) { //5を選択
 		player.equipment = player.having_item[5];
 		player.having_item[5] = change.equipment;
-		SceneMgr_ChangeScene(eScene_EquipmentChange);//現在の装備と5の装備を入れ替える
+		//現在の装備と5の装備を入れ替える
 	}
-	if (CheckHitKey(KEY_INPUT_6) != 0) { //6を選択
+	else if (Keyboard_Get(KEY_INPUT_6) == 1) { //6を選択
 		player.equipment = player.having_item[6];
 		player.having_item[6] = change.equipment;
-		SceneMgr_ChangeScene(eScene_EquipmentChange);//現在の装備と6の装備を入れ替える
+		//現在の装備と6の装備を入れ替える
 	}
-	if (CheckHitKey(KEY_INPUT_7) != 0) { //7を選択
+	else if (Keyboard_Get(KEY_INPUT_7) == 1) { //7を選択
 		player.equipment = player.having_item[7];
 		player.having_item[7] = change.equipment;
-		SceneMgr_ChangeScene(eScene_EquipmentChange);//現在の装備と7の装備を入れ替える
+		//現在の装備と7の装備を入れ替える
 	}
-	if (CheckHitKey(KEY_INPUT_8) != 0) { //8を選択
+	else if (Keyboard_Get(KEY_INPUT_8) == 1) { //8を選択
 		player.equipment = player.having_item[8];
 		player.having_item[8] = change.equipment;
-		SceneMgr_ChangeScene(eScene_EquipmentChange);//現在の装備と8の装備を入れ替える
+		//現在の装備と8の装備を入れ替える
 	}
-	if (CheckHitKey(KEY_INPUT_9) != 0) { //9を選択
+	else if (Keyboard_Get(KEY_INPUT_9) == 1) { //9を選択
 		player.equipment = player.having_item[9];
 		player.having_item[9] = change.equipment;
-		SceneMgr_ChangeScene(eScene_EquipmentChange);//現在の装備と9の装備を入れ替える
+		//現在の装備と9の装備を入れ替える
 	}
 }
 

@@ -12,7 +12,7 @@ void Menu_Update() {
 		SceneMgr_ChangeScene(eScene_EquipmentChange);
 	}
 	if (CheckHitKey(KEY_INPUT_T) != 0) {
-			SceneMgr_ChangeScene(eScene_Title);
+		SceneMgr_ChangeScene(eScene_Title);
 	}
 	if (CheckHitKey(KEY_INPUT_Z) != 0) {
 		DxLib_End();
