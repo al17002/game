@@ -44,6 +44,7 @@
     <ClCompile Include="EquipmentChange.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="hitJudgment.cpp" />
+    <ClCompile Include="itemdata.cpp" />
     <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />

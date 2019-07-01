@@ -9,6 +9,8 @@ void input_savedata(int num);
 int get_equipment();
 void move_player(int move_x, int move_y);
 void add_item(int n);
+void dataflow();
+void output_itemdata()
 
 typedef struct item_desc{//アイテムの説明
 	char name[256];

@@ -10,14 +10,17 @@ void SaveSelect_Update() {
 	}
 	if (CheckHitKey(KEY_INPUT_1) != 0) { //1を選択
 		input_savedata(1);//セーブデータ1をもう一回呼ぶ
+		dataflow();
 		SceneMgr_ChangeScene(eScene_WareHouse);//セーブデータ1を選択してゲームを開始
 	}
 	if (CheckHitKey(KEY_INPUT_2) != 0) { //2を選択
 		input_savedata(2);//セーブデータ2をもう一回呼ぶ
+		dataflow();
 		SceneMgr_ChangeScene(eScene_WareHouse);//セーブデータ2を選択してゲームを開始
 	}
 	if (CheckHitKey(KEY_INPUT_3) != 0) { //3を選択
 		input_savedata(3);//セーブデータ3をもう一回呼ぶ
+		dataflow();
 		SceneMgr_ChangeScene(eScene_WareHouse);//セーブデータ3を選択してゲームを開始
 	}
 }

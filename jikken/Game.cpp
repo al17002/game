@@ -37,5 +37,5 @@ void Game_Draw() {
 	DrawString(1250, 40, "ゲーム画面", GetColor(255, 255, 255));
 	DrawFormatString(1250, 60, GetColor(255, 255, 255), "Mキーを押すと\nメニュー画面に移動します。\nWボタンを押すと\nゲーム遷移画面へ戻ります");
 	DrawFormatString(1250, 150, GetColor(255, 255, 255), "現在は%d階層目です",1);
-	DrawFormatString(1250, 200, GetColor(255, 255, 255), "装備中:%d atk: %d hp: %d", player_item.equipment.ID, player_item.equipment.atk, player_item.equipment.hp);
+	DrawFormatString(1250, 200, GetColor(255, 255, 255), "装備中:%d atk: %d hp: %d", player.equipment.ID, player.equipment.atk, player.equipment.hp);
 }

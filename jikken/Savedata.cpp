@@ -123,7 +123,9 @@ void move_player(int move_x,int move_y){
 }
 
 void hit_enemy(int enemy_id) {
-	//player.equipment.hp -= m_Enemy[enemy_id].
+	if (/*攻撃されたら*/1)player.equipment.hp -= m_Enemy[enemy_id].equipment.atk;
+	else m_Enemy[enemy_id].equipment.hp -= player.equipment.atk;//攻撃したら
+
 }
 
 void add_item(int n) {
