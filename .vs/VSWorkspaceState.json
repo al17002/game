@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\jikken"
+    "\\jikken",
+    "\\jikken\\画像"
   ],
-  "SelectedNode": "\\.gitignore",
+  "SelectedNode": "\\jikken\\map.txt",
   "PreviewInSolutionExplorer": false
 }

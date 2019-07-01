@@ -1,21 +1,13 @@
-﻿  Actor.cpp
-  Enemy.cpp
+﻿  Enemy.cpp
   EnemyMgr.cpp
   EquipmentChange.cpp
+c:\users\kotatsuya\source\repos\game\jikken\equipmentchange.cpp(69): warning C4101: 'change': ローカル変数は 1 度も使われていません。
   Game.cpp
-  Keyboard.cpp
-  load_map.cpp
-c:\users\kotatsuya\source\repos\game\jikken\load_map.h(14): warning C4101: 'end': ローカル変数は 1 度も使われていません。
-  main.cpp
-  Map.cpp
-c:\users\kotatsuya\source\repos\game\jikken\map.cpp : warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-c:\users\kotatsuya\source\repos\game\jikken\load_map.h(14): warning C4101: 'end': ローカル変数は 1 度も使われていません。
-c:\users\kotatsuya\source\repos\game\jikken\map.cpp(36): error C2084: 関数 'void load_map(int,int [][50])' は既に本体を持っています。
-  c:\users\kotatsuya\source\repos\game\jikken\load_map.h(10): note: 'load_map' の以前の定義を確認してください
-  Menu.cpp
   Player.cpp
   Save.cpp
   SaveSelect.cpp
+  Savedata.cpp
   SceneMgr.cpp
   Title.cpp
   コードを生成中...
+  GameProg.vcxproj -> C:\Users\Kotatsuya\source\repos\game\jikken\x64\Debug\GameProg.exe
