@@ -14,7 +14,8 @@ typedef struct {
 	int muki;
 	int walking_flag;
 	item equipment;
-	bool enemy_turn;
+	bool enemy_turn = true;
+	bool alive = false;
 } Enemy_t;
 
 // ‰Šú‰»‚ğ‚·‚é

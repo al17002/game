@@ -1,7 +1,6 @@
 #include "WareHouse.h"
 #include "SceneMgr.h"
 #include "DxLib.h"
-#include "newfloor.h"
 #include "savedata.h"
 //XV
 void WareHouse_Update() {

@@ -1,9 +1,19 @@
 #include "Map.h"
 #include "DxLib.h"
+#include "Player.h"
+#include "EnemyMgr.h"
+
 
 static int image_floor;
 static int map[32][40] = {};
 
+void floor_renew(int map_id) {
+	load_map(map_id);
+	EnemyMgr_Finalize();
+	Player_Finalize();
+	EnemyMgr_Initialize();
+	Player_Initialize();
+}
 
 void additem(int n){
 
@@ -15,7 +25,9 @@ void item_event(int n) {
 }
 
 void floor_event(int n) {
-	
+	if (n == 3) {
+		floor_renew(2);
+	}
 }
 
 int IsAbleToGo(int x, int y, int muki) {//進めるかを判定する
@@ -28,7 +40,7 @@ int IsAbleToGo(int x, int y, int muki) {//進めるかを判定する
 			return 0;
 		}
 		else if (map[y / 32 - 1][x / 32] >= 10) {
-			item_event(map[y / 32 - 1][x / 32]); //進む先のmap[][]==10のとき、item_event関数呼び出し
+			item_event(map[y / 32 - 1][x / 32]); //進む先のmap[][]>=10のとき、item_event関数呼び出し
 			map[y / 32 - 1][x / 32] = 0;
 			return 0;
 		}

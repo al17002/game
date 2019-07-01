@@ -60,9 +60,6 @@
     <ClInclude Include="load_map.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="newfloor.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="hitJudgment.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
@@ -110,13 +107,7 @@
     <ClCompile Include="SaveSelect.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="can_move.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="Savedata.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="newfloor.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="hitJudgment.cpp">
@@ -142,5 +133,13 @@
     <None Include="savedata3.dat">
       <Filter>リソース ファイル</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="map.txt">
+      <Filter>リソース ファイル</Filter>
+    </Text>
+    <Text Include="map2.txt">
+      <Filter>リソース ファイル</Filter>
+    </Text>
   </ItemGroup>
 </Project>

@@ -42,7 +42,7 @@ void Player_Update() {
 				int hitcheck = hitJudgment(muki, -1);
 				if (hitcheck != -2) {
 					walking_flag = 0;
-					//event_attack(hitcheck);
+					hit_enemy(hitcheck);
 					turn = false;
 				}
 				if (IsAbleToGo(player.x, player.y, muki) == 1) {

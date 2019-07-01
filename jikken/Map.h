@@ -1,6 +1,8 @@
 #pragma once
 
 
+void floor_renew(int map_id);
+
 int IsAbleToGo(int x, int y, int muki);
 
 void Floor_Initialize();

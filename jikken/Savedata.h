@@ -10,9 +10,11 @@ int get_equipment();
 void move_player(int move_x, int move_y);
 void add_item(int n);
 void dataflow();
-void output_itemdata()
+void output_itemdata();
+void hit_enemy(int enemy_id);
+void hit_player(int enemy_id);
 
-typedef struct item_desc{//アイテムの説明
+typedef struct item_desc{ //アイテムの説明
 	char name[256];
     char explain[256];
     char effect[256];

@@ -4,10 +4,10 @@
 #include "Map.h"
 #include "Game.h"
 
-static const int NUM = 10;        //“G‚Ì”
+static const int NUM = 2;	//“G‚Ì”
 
-Enemy_t m_Enemy[NUM];   //“G‚ÌÀ‘Ì
-static int m_ImgEnemy;          //“G‚Ì‰æ‘œƒnƒ“ƒhƒ‹
+Enemy_t m_Enemy[NUM];		//“G‚ÌÀ‘Ì
+static int m_ImgEnemy;		//“G‚Ì‰æ‘œƒnƒ“ƒhƒ‹
 static int image[16];
 
 static bool inturn = false;
@@ -25,8 +25,10 @@ void EnemyMgr_Update() {
 	if (!turn) {
 		if (!inturn) {
 			inturn = true;
-			for (int i = 0; i < NUM; i++) {
-				m_Enemy[i].enemy_turn = false;
+			for (int i = 0; i < NUM; i++) {//¶‚«‚Ä‚¢‚é“G‘Sˆõ‚Éƒ^[ƒ“‚ğ“n‚·
+				if (m_Enemy[i].alive) {
+					m_Enemy[i].enemy_turn = false;
+				}
 			}
 		}
 		check = true;//‚±‚ÌŒã‚Ìˆ—‚Åcheck‚ª•Ï‚í‚ç‚È‚¯‚ê‚Îƒ^[ƒ“‚ÍI‚í‚Á‚Ä‚¢‚é

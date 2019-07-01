@@ -1,7 +1,6 @@
 #include "Menu.h"
 #include "SceneMgr.h"
 #include "DxLib.h"
-#include "newfloor.h"
 #include "savedata.h"
 
 //çXêV
@@ -14,9 +13,6 @@ void Menu_Update() {
 	}
 	if (CheckHitKey(KEY_INPUT_T) != 0) {
 			SceneMgr_ChangeScene(eScene_Title);
-	}
-	if (CheckHitKey(KEY_INPUT_N) != 0) {
-		floor_renew(2);
 	}
 	if (CheckHitKey(KEY_INPUT_Z) != 0) {
 		DxLib_End();

@@ -122,10 +122,17 @@ void move_player(int move_x,int move_y){
 	player.y += move_y;
 }
 
-void hit_enemy(int enemy_id) {
-	if (/*攻撃されたら*/1)player.equipment.hp -= m_Enemy[enemy_id].equipment.atk;
-	else m_Enemy[enemy_id].equipment.hp -= player.equipment.atk;//攻撃したら
-
+void hit_enemy(int enemy_id) {//プレイヤーが敵を攻撃
+	m_Enemy[enemy_id].equipment.hp -= player.equipment.atk;
+	if (m_Enemy[enemy_id].equipment.hp < 0) {//敵が死亡
+		m_Enemy[enemy_id].y = -3200;
+		m_Enemy[enemy_id].x = -3200;
+		m_Enemy[enemy_id].enemy_turn = true;
+		m_Enemy[enemy_id].alive = false;
+	}
+}
+void hit_player(int enemy_id) {//敵がプレイヤーを攻撃
+	player.equipment.hp -= m_Enemy[enemy_id].equipment.atk;
 }
 
 void add_item(int n) {

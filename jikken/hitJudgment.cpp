@@ -28,10 +28,11 @@ int hitJudgment(int direction, int myNum) {//return = mynum (player = -1 noone =
 		return -2;
 	}
 	else {//check for enemy
-		for (int i = 0; i < 2; i++) {//check enemy
+		for (int i = 0; i < 2; i++) {
 			if (direction == 0) {
-				if ((m_Enemy[myNum].x == m_Enemy[i].x) && (m_Enemy[myNum].y - 32 == m_Enemy[i].y)) return i;
-				else if (m_Enemy[myNum].x == player.x && m_Enemy[myNum].y - 32 == player.y) return -1;
+				//top
+				if ((m_Enemy[myNum].x == m_Enemy[i].x) && (m_Enemy[myNum].y - 32 == m_Enemy[i].y)) return i;//check enemy
+				else if (m_Enemy[myNum].x == player.x && m_Enemy[myNum].y - 32 == player.y) return -1;//check player
 			}
 			else if (direction == 1) {
 				//left
