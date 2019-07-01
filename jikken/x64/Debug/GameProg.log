@@ -1,13 +1,34 @@
-﻿  Enemy.cpp
-  EnemyMgr.cpp
-  EquipmentChange.cpp
-c:\users\kotatsuya\source\repos\game\jikken\equipmentchange.cpp(69): warning C4101: 'change': ローカル変数は 1 度も使われていません。
-  Game.cpp
-  Player.cpp
-  Save.cpp
-  SaveSelect.cpp
-  Savedata.cpp
-  SceneMgr.cpp
-  Title.cpp
-  コードを生成中...
-  GameProg.vcxproj -> C:\Users\Kotatsuya\source\repos\game\jikken\x64\Debug\GameProg.exe
+﻿  Savedata.cpp
+c:\users\al17088\source\repos\game\jikken\savedata.h(4): warning C4200: 非標準の拡張機能が使用されています: 構造体または共用体中にサイズが 0 の配列があります。
+  c:\users\al17088\source\repos\game\jikken\savedata.h(4): note: このメンバーは、既定のコンストラクターまたはコピー/移動代入演算子により無視されます
+c:\users\al17088\source\repos\game\jikken\savedata.h(5): error C2086: 'int player_item::itemID[0]': 再定義されました。
+  c:\users\al17088\source\repos\game\jikken\savedata.h(4): note: 'player_item::itemID' の宣言を確認してください
+c:\users\al17088\source\repos\game\jikken\savedata.h(5): error C2229: struct 'player_item' にサイズが 0 の配列があります。
+c:\users\al17088\source\repos\game\jikken\savedata.h(6): error C2086: 'int player_item::itemID[0]': 再定義されました。
+  c:\users\al17088\source\repos\game\jikken\savedata.h(4): note: 'player_item::itemID' の宣言を確認してください
+c:\users\al17088\source\repos\game\jikken\savedata.h(7): error C2086: 'int player_item::itemID[0]': 再定義されました。
+  c:\users\al17088\source\repos\game\jikken\savedata.h(4): note: 'player_item::itemID' の宣言を確認してください
+c:\users\al17088\source\repos\game\jikken\savedata.h(8): error C2086: 'int player_item::itemID[0]': 再定義されました。
+  c:\users\al17088\source\repos\game\jikken\savedata.h(4): note: 'player_item::itemID' の宣言を確認してください
+c:\users\al17088\source\repos\game\jikken\savedata.h(9): error C2086: 'int player_item::itemID[0]': 再定義されました。
+  c:\users\al17088\source\repos\game\jikken\savedata.h(4): note: 'player_item::itemID' の宣言を確認してください
+c:\users\al17088\source\repos\game\jikken\savedata.h(10): error C2086: 'int player_item::itemID[0]': 再定義されました。
+  c:\users\al17088\source\repos\game\jikken\savedata.h(4): note: 'player_item::itemID' の宣言を確認してください
+c:\users\al17088\source\repos\game\jikken\savedata.h(11): error C2086: 'int player_item::itemID[0]': 再定義されました。
+  c:\users\al17088\source\repos\game\jikken\savedata.h(4): note: 'player_item::itemID' の宣言を確認してください
+c:\users\al17088\source\repos\game\jikken\savedata.h(12): error C2086: 'int player_item::itemID[0]': 再定義されました。
+  c:\users\al17088\source\repos\game\jikken\savedata.h(4): note: 'player_item::itemID' の宣言を確認してください
+c:\users\al17088\source\repos\game\jikken\savedata.h(13): error C2086: 'int player_item::itemID[0]': 再定義されました。
+  c:\users\al17088\source\repos\game\jikken\savedata.h(4): note: 'player_item::itemID' の宣言を確認してください
+c:\users\al17088\source\repos\game\jikken\savedata.h(14): error C2086: 'int player_item::itemID[0]': 再定義されました。
+  c:\users\al17088\source\repos\game\jikken\savedata.h(4): note: 'player_item::itemID' の宣言を確認してください
+c:\users\al17088\source\repos\game\jikken\savedata.h(15): warning C4091: 'typedef ': 変数が何も宣言されていないときは、'player_item' の左辺を無視します。
+c:\users\al17088\source\repos\game\jikken\savedata.h(22): warning C4091: 'typedef ': 変数が何も宣言されていないときは、'player_alldata' の左辺を無視します。
+c:\users\al17088\source\repos\game\jikken\savedata.h(26): error C2143: 構文エラー: ';' が '}' の前にありません。
+c:\users\al17088\source\repos\game\jikken\savedata.h(26): warning C4091: 'typedef ': 変数が何も宣言されていないときは、'player_data' の左辺を無視します。
+c:\users\al17088\source\repos\game\jikken\savedata.cpp(15): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(207): note: 'fopen' の宣言を確認してください
+c:\users\al17088\source\repos\game\jikken\savedata.cpp(17): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(207): note: 'fopen' の宣言を確認してください
+c:\users\al17088\source\repos\game\jikken\savedata.cpp(19): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(207): note: 'fopen' の宣言を確認してください
