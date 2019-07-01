@@ -1,18 +1,30 @@
 ﻿#pragma once
+
 #include <iostream>
 #include <string>
 
 using namespace std;
 
+
+//セーブ
 void output_savedata(int num);
+//ロード
 void input_savedata(int num);
-int get_equipment();
-void move_player(int move_x, int move_y);
-void add_item(int n);
+//データの移し替え
 void dataflow();
-void output_itemdata();
+//プレイヤーを移動
+void move_player(int move_x, int move_y);
+//アイテムを追加
+void add_item(int n);
+
+//プレイヤーが敵を攻撃
 void hit_enemy(int enemy_id);
+
+//敵がプレイヤーを攻撃
 void hit_player(int enemy_id);
+
+//アイテムデータを出力
+void output_itemdata();
 
 typedef struct item_desc{ //アイテムの説明
 	char name[256];
@@ -21,9 +33,6 @@ typedef struct item_desc{ //アイテムの説明
 	int atk;
 	int hp;
 }item_desc;
-
-
-extern item_desc itemRef[100]; //[アイテムid] mapからうけとったデータに関して-10をもちいて使用する
 
 typedef struct item{
     int ID;
@@ -49,7 +58,6 @@ typedef struct player_data {
 
 }player_data;
 
-
-
+extern item_desc itemRef[100]; //[アイテムid] mapからうけとったデータに関して-10をもちいて使用する
 extern player_item_data player_item; //グローバル変数
 extern player_data player;

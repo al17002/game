@@ -25,7 +25,6 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="hitJudgment.h" />
     <ClInclude Include="Keyboard.h" />
-    <ClInclude Include="load_map.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Player.h" />
@@ -42,7 +41,6 @@
     <ClCompile Include="EquipmentChange.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="hitJudgment.cpp" />
-    <ClCompile Include="itemdata.cpp" />
     <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />

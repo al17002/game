@@ -8,13 +8,8 @@
 #include "Enemy.h"
 #include "Savedata.h"
 
-bool turn = true;//ターン(Global) True = player false = enemy
-
-typedef struct {
-	int x, y, img;
-}ch_t;
-
 //更新
+bool turn = true;
 void Game_Update() {
 	if (CheckHitKey(KEY_INPUT_M) != 0) { //Mキーが押されていたら
 		SceneMgr_ChangeScene(eScene_Menu);//シーンをメニューに変更

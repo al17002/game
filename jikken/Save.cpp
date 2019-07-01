@@ -2,6 +2,7 @@
 #include "SceneMgr.h"
 #include "DxLib.h"
 #include "Savedata.h"
+
 player_item_data genzai;
 //XV
 void Save_Update() {

@@ -2,11 +2,13 @@
 #include "DxLib.h"
 #include "Player.h"
 #include "EnemyMgr.h"
+#include "Savedata.h"
 
 
 static int image_floor;
 static int map[32][40] = {};
 
+//階層の更新
 void floor_renew(int map_id) {
 	load_map(map_id);
 	EnemyMgr_Finalize();
@@ -15,12 +17,8 @@ void floor_renew(int map_id) {
 	Player_Initialize();
 }
 
-void additem(int n){
-
-}
-
+//アイテムイベントの発生
 void item_event(int n) {
-
 	add_item(n);
 }
 
@@ -29,11 +27,11 @@ void floor_event(int n) {
 		floor_renew(2);
 	}
 }
-
-int IsAbleToGo(int x, int y, int muki) {//進めるかを判定する
+//進めるかを判定する
+int IsAbleToGo(int x, int y, int muki) {
 	if (muki == 0) {//上向きなら
-		if (map[y / 32 - 1][x / 32] == 1){ //進めるか判定 
-			return 1;//エラー
+		if (map[y / 32 - 1][x / 32] == 1){ 
+			return 1;//壁
 		}
 		else if (map[y / 32 - 1][x / 32] <= 9 && map[y / 32 - 1][x / 32] >= 2) {
 			floor_event(map[y / 32 - 1][x / 32]); //進む先の2<=map[][]=<9のとき、floor_event関数呼び出し
@@ -95,6 +93,7 @@ void Floor_Initialize() {
 	image_floor=LoadGraph("画像/階段.png");
 }
 
+//描画
 void Map_Draw() {
 	for (int i = 0; i < 32; i++)
 		for (int j = 0; j < 40; j++)
@@ -109,7 +108,7 @@ void Map_Draw() {
 				DrawBox(j * 32, i * 32, (j + 1) * 32, (i + 1) * 32, GetColor(255, 255, 0), TRUE);
 }
 
-
+//マップの読み込み
 void load_map(int map_id) {
 	int i = 0, j = 0;
 	FILE *fp;

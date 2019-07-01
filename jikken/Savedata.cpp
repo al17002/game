@@ -6,6 +6,7 @@
 player_item_data player_item;//グローバル変数
 player_data player;
 Enemy_t Enemy[];
+item_desc itemRef[100];
 
 void output_savedata(int num){//セーブ
     int i;
@@ -92,6 +93,7 @@ void input_savedata(int num) {//ロード
     
 }
 
+//データの移し替え
 void dataflow() {
 
 	int i;
@@ -110,19 +112,30 @@ void dataflow() {
 	player.equipment.hp = player_item.equipment.hp;
 }
 
-
-int get_equipment() {
-	
-	return player.equipment.ID;
-}
-
+//プレイヤーを移動
 void move_player(int move_x,int move_y){
-	//プレイヤーを移動
+
 	player.x += move_x;
 	player.y += move_y;
 }
 
-void hit_enemy(int enemy_id) {//プレイヤーが敵を攻撃
+//アイテムを追加
+void add_item(int n) {
+
+	if (player.itemnum == 10) {
+
+	}
+	else {
+		player.having_item[player.itemnum].ID = n - 10;
+		player.having_item[player.itemnum].atk = 1;
+		player.having_item[player.itemnum].hp = 1;
+		player.itemnum += 1;
+	}
+
+}
+
+//プレイヤーが敵を攻撃
+void hit_enemy(int enemy_id) {
 	m_Enemy[enemy_id].equipment.hp -= player.equipment.atk;
 	if (m_Enemy[enemy_id].equipment.hp < 0) {//敵が死亡
 		m_Enemy[enemy_id].y = -3200;
@@ -131,20 +144,27 @@ void hit_enemy(int enemy_id) {//プレイヤーが敵を攻撃
 		m_Enemy[enemy_id].alive = false;
 	}
 }
-void hit_player(int enemy_id) {//敵がプレイヤーを攻撃
+
+//敵がプレイヤーを攻撃
+void hit_player(int enemy_id) {
 	player.equipment.hp -= m_Enemy[enemy_id].equipment.atk;
 }
 
-void add_item(int n) {
+//アイテムデータを出力
+void output_itemdata() {
+	int i;
+	FILE *fp;
 
-	if (player.itemnum == 10) {
+	fopen_s(&fp, "itemdata.dat", "wb");
 
+	for (i = 0; i < 100; i++) {
+		fread(itemRef[i].name, sizeof(char), sizeof(itemRef[i].name), fp);
+		fread(itemRef[i].explain, sizeof(char), sizeof(itemRef[i].explain), fp);
+		fread(itemRef[i].effect, sizeof(char), sizeof(itemRef[i].effect), fp);
+		fread(&itemRef[i].atk, sizeof(int), 1, fp);
+		fread(&itemRef[i].hp, sizeof(int), 1, fp);
 	}
-	else {
-		player.having_item[player.itemnum].ID = n-10;
-		player.having_item[player.itemnum].atk = 1;
-		player.having_item[player.itemnum].hp = 1;
-		player.itemnum += 1;
-	}
+
+	fclose(fp);
 
 }

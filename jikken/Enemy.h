@@ -1,9 +1,6 @@
-#ifndef DEF_Enemy_H //“ñdinclude–h~
+#pragma once
 
-#define DEF_Enemy_H
 #include "Savedata.h"
-
-
 
 typedef struct {
 	int num;
@@ -31,5 +28,3 @@ void Enemy_Draw(Enemy_t Enemy);
 void Enemy_Finalize(Enemy_t Enemy);
 
 extern Enemy_t m_Enemy[];
-
-#endif

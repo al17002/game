@@ -1,4 +1,13 @@
-﻿  Menu.cpp
-  WareHouse.cpp
+﻿  Enemy.cpp
+  EnemyMgr.cpp
+  EquipmentChange.cpp
+c:\users\kotatsuya\source\repos\game\jikken\equipmentchange.cpp(69): warning C4101: 'change': ローカル変数は 1 度も使われていません。
+  Game.cpp
+  Player.cpp
+  Save.cpp
+  SaveSelect.cpp
+  Savedata.cpp
+  SceneMgr.cpp
+  Title.cpp
   コードを生成中...
   GameProg.vcxproj -> C:\Users\Kotatsuya\source\repos\game\jikken\x64\Debug\GameProg.exe

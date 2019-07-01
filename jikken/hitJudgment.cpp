@@ -5,7 +5,7 @@
 #include "EnemyMgr.h"
 
 
-
+//“–‚½‚è”»’è‚ÌŠm”F
 int hitJudgment(int direction, int myNum) {//return = mynum (player = -1 noone = -2 enemy = num
 	if (myNum == -1) {//check for player
 		for (int i = 0; i < 2; i++) {
