@@ -1,4 +1,5 @@
 #pragma once
 
-//当たり判定の確認
-int hitJudgment(int direction, int myNum);
+//当たり判定の確認　player = -1, noone = 0 enemy = num
+void removeHitbox(int y, int x);
+int hitJudgement(int direction, int myNum);

@@ -4,52 +4,111 @@
 #include "Savedata.h"  //For player position
 #include "EnemyMgr.h"
 
+static int hitmap[32][40] = {0};
 
-//当たり判定の確認
-int hitJudgment(int direction, int myNum) {//return = mynum (player = -1 noone = -2 enemy = num
-	if (myNum == -1) {//check for player
-		for (int i = 0; i < 2; i++) {
-			if (direction == 0) {
-				if ((player.x == m_Enemy[i].x) && (player.y - 32 == m_Enemy[i].y)) return i;
+//return mynum(player = -1, noone = 0 enemy = num
+
+void removeHitbox(int y, int x) {
+	y = y / 32;
+	x = x / 32;
+	hitmap[y][x] = 0;
+}
+int hitJudgement(int direction, int myNum) {
+	if (myNum == -1) {//playerが移動している
+		int x = player.x / 32, y = player.y / 32;
+		if (direction == 0) {
+			if (hitmap[y - 1][x] == 0) {//空いている
+				hitmap[y][x] = 0;
+				hitmap[y - 1][x] = -1;
+				return 0;
 			}
-			else if (direction == 1) {
-				//left
-				if ((player.x - 32 == m_Enemy[i].x) && (player.y == m_Enemy[i].y)) return i;
-			}
-			else if (direction == 2) {
-				//under
-				if ((player.x == m_Enemy[i].x) && (player.y + 32 == m_Enemy[i].y)) return i;
-			}
-			else if (direction == 3) {
-				//right
-				if ((player.x + 32 == m_Enemy[i].x) && (player.y == m_Enemy[i].y)) return i;
-			}
-		}
-		return -2;
-	}
-	else {//check for enemy
-		for (int i = 0; i < 2; i++) {
-			if (direction == 0) {
-				//top
-				if ((m_Enemy[myNum].x == m_Enemy[i].x) && (m_Enemy[myNum].y - 32 == m_Enemy[i].y)) return i;//check enemy
-				else if (m_Enemy[myNum].x == player.x && m_Enemy[myNum].y - 32 == player.y) return -1;//check player
-			}
-			else if (direction == 1) {
-				//left
-				if ((m_Enemy[myNum].x - 32 == m_Enemy[i].x) && (m_Enemy[myNum].y == m_Enemy[i].y)) return i;
-				else if (m_Enemy[myNum].x - 32 == (player.x) && m_Enemy[myNum].y  == (player.y)) return -1;
-			}
-			else if (direction == 2) {
-				//under
-				if ((m_Enemy[myNum].x == m_Enemy[i].x) && (m_Enemy[myNum].y + 32 == m_Enemy[i].y)) return i;
-				else if (m_Enemy[myNum].x == player.x && m_Enemy[myNum].y + 32 == player.y) return -1;
-			}
-			else if (direction == 3) {
-				//right
-				if ((m_Enemy[myNum].x + 32 == m_Enemy[i].x) && (m_Enemy[myNum].y == m_Enemy[i].y)) return i;
-				else if (m_Enemy[myNum].x +32 == player.x && m_Enemy[myNum].y == player.y) return -1;
+			else {//誰かがいる
+				hitmap[y][x] = -1;
+				return hitmap[y - 1][x];
 			}
 		}
-		return -2;
+		if (direction == 1) {
+			if (hitmap[y][x - 1] == 0) {//空いている
+				hitmap[y][x] = 0;
+				hitmap[y][x - 1] = -1;
+				return 0;
+			}
+			else {//誰かがいる
+				hitmap[y][x] = -1;
+				return hitmap[y][x - 1];
+			}
+		}
+		if (direction == 2) {
+			if (hitmap[y + 1][x] == 0) {//空いている
+				hitmap[y][x] = 0;
+				hitmap[y + 1][x] = -1;
+				return 0;
+			}
+			else {//誰かがいる
+				hitmap[y][x] = -1;
+				return hitmap[y + 1][x];
+			}
+		}
+		if (direction == 3) {
+			if (hitmap[y][x + 1] == 0) {//空いている
+				hitmap[y][x] = 0;
+				hitmap[y][x + 1] = -1;
+				return 0;
+			}
+			else {//誰かがいる
+				hitmap[y][x] = -1;
+				return hitmap[y][x + 1];
+			}
+		}
+
 	}
+	else {
+		int x = m_Enemy[myNum].x / 32, y = m_Enemy[myNum].y / 32;
+		myNum += 1;//Mapのデータに合わせて1を足す
+		if (direction == 0) {
+			if (hitmap[y - 1][x] == 0) {//空いている
+				hitmap[y][x] = 0;
+				hitmap[y - 1][x] = myNum;
+				return 0;
+			}
+			else {//誰かがいる
+				hitmap[y][x] = myNum;
+				return hitmap[y - 1][x];
+			}
+		}
+		if (direction == 1) {
+			if (hitmap[y][x - 1] == 0) {//空いている
+				hitmap[y][x] = 0;
+				hitmap[y][x - 1] = myNum;
+				return 0;
+			}
+			else {//誰かがいる
+				hitmap[y][x] = myNum;
+				return hitmap[y][x - 1];
+			}
+		}
+		if (direction == 2) {
+			if (hitmap[y + 1][x] == 0) {//空いている
+				hitmap[y][x] = 0;
+				hitmap[y + 1][x] = myNum;
+				return 0;
+			}
+			else {//誰かがいる
+				hitmap[y][x] = myNum;
+				return hitmap[y + 1][x];
+			}
+		}
+		if (direction == 3) {
+			if (hitmap[y][x + 1] == 0) {//空いている
+				hitmap[y][x] = 0;
+				hitmap[y][x + 1] = myNum;
+				return 0;
+			}
+			else {//誰かがいる
+				hitmap[y][x] = myNum;
+				return hitmap[y][x + 1];
+			}
+		}
+	}
+	return -2;
 }

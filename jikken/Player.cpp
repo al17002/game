@@ -39,15 +39,17 @@ void Player_Update() {
 				walking_flag = 0; //•à‚©‚È‚¢ƒtƒ‰ƒO‚ğ—§‚Ä‚é
 
 			if (walking_flag == 1) {
-				int hitcheck = hitJudgment(muki, -1);
-				if (hitcheck != -2) {
-					walking_flag = 0;
-					hit_enemy(hitcheck);
-					turn = false;
-				}
 				if (IsAbleToGo(player.x, player.y, muki) == 1) {
 					walking_flag = 0;
 					turn = false;
+				}
+				else {
+					int hitcheck = hitJudgement(muki, -1);
+					if (hitcheck != 0) {
+						walking_flag = 0;
+						hit_enemy(hitcheck - 1);//‡‚í‚¹‚é‚½‚ß‚É-1
+						turn = false;
+					}
 				}
 			}
 		}

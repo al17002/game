@@ -44,19 +44,21 @@ void Enemy_Update(Enemy_t *Enemy) {
 					Enemy->walking_flag = 1; //まあ頑張って左に歩くフラグを立てる
 			}
 			if (Enemy->walking_flag == 1) {
-				int hitcheck = hitJudgment(Enemy->muki, Enemy->num);
-				if (hitcheck == -1) {//プレイヤーに当たった
-					Enemy->walking_flag = 0;
-					hit_player(Enemy->num);
-					Enemy->enemy_turn = true;
-				}
-				else if (hitcheck != -2) {
-					Enemy->walking_flag = 0;
-					Enemy->enemy_turn = true;
-				}
 				if (IsAbleToGo(Enemy->x, Enemy->y, Enemy->muki) == 1) {
 					Enemy->walking_flag = 0;
 					Enemy->enemy_turn = true;
+				}
+				else {
+					int hitcheck = hitJudgement(Enemy->muki, Enemy->num);
+					if (hitcheck == -1) {//プレイヤーに当たった
+						Enemy->walking_flag = 0;
+						hit_player(Enemy->num);
+						Enemy->enemy_turn = true;
+					}
+					else if (hitcheck != 0) {
+						Enemy->walking_flag = 0;
+						Enemy->enemy_turn = true;
+					}
 				}
 			}
 		}

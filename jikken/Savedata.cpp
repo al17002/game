@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include "Savedata.h"
 #include "enemy.h"
+#include "hitJudgment.h"
 
 
 player_item_data player_item;//グローバル変数
@@ -138,8 +139,9 @@ void add_item(int n) {
 void hit_enemy(int enemy_id) {
 	m_Enemy[enemy_id].equipment.hp -= player.equipment.atk;
 	if (m_Enemy[enemy_id].equipment.hp < 0) {//敵が死亡
-		m_Enemy[enemy_id].y = -3200;
-		m_Enemy[enemy_id].x = -3200;
+		removeHitbox(m_Enemy[enemy_id].y, m_Enemy[enemy_id].x);
+		m_Enemy[enemy_id].y = 0;
+		m_Enemy[enemy_id].x = 0;
 		m_Enemy[enemy_id].enemy_turn = true;
 		m_Enemy[enemy_id].alive = false;
 	}

@@ -4,7 +4,7 @@
 #include "Map.h"
 #include "Game.h"
 
-static const int NUM = 2;	//“G‚Ì”
+static const int NUM = 10;	//“G‚Ì”
 
 Enemy_t m_Enemy[NUM];		//“G‚ÌÀ‘Ì
 static int m_ImgEnemy;		//“G‚Ì‰æ‘œƒnƒ“ƒhƒ‹
