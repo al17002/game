@@ -1,5 +1,6 @@
 #pragma once
 
+//ターン(Global) True = player false = enemy
 extern bool turn;
 
 //更新

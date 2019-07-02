@@ -1,6 +1,4 @@
-#ifndef DEF_PLAYER_H //“ñdinclude–h~
-
-#define DEF_PLAYER_H
+#pragma once
 
 // ‰Šú‰»‚ğ‚·‚é
 void Player_Initialize();
@@ -13,5 +11,3 @@ void Player_Draw();
 
 // I—¹ˆ—‚ğ‚·‚é
 void Player_Finalize();
-
-#endif 

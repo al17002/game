@@ -4,19 +4,20 @@
 #include "Map.h"
 #include "Game.h"
 
-static const int NUM = 2;        //プレイヤーの数
+static const int NUM = 2;	//敵の数
 
-static Enemy_t m_Enemy[NUM];   //プレイヤーの実体
-static int m_ImgEnemy;          //プレイヤーの画像ハンドル
+Enemy_t m_Enemy[NUM];		//敵の実体
+static int m_ImgEnemy;		//敵の画像ハンドル
 static int image[16];
+
 static bool inturn = false;
 static bool check = false;
 
 // 初期化をする
 void EnemyMgr_Initialize() {
-	LoadDivGraph("画像/キャラクタ10.png", 16, 4, 4, 32, 32, image);
-	Enemy_Initialize(&m_Enemy[0], 288,320, image);// 初期化
-	Enemy_Initialize(&m_Enemy[1], 320,320, image);// 初期化
+	LoadDivGraph("画像/キャラクタ11.png", 16, 4, 4, 32, 32, image);
+	Enemy_Initialize(&m_Enemy[0], 288,320, image, 0);// 初期化
+	Enemy_Initialize(&m_Enemy[1], 320,320, image, 1);// 初期化
 }
 
 // 動きを計算する
@@ -24,8 +25,10 @@ void EnemyMgr_Update() {
 	if (!turn) {
 		if (!inturn) {
 			inturn = true;
-			for (int i = 0; i < NUM; i++) {
-				m_Enemy[i].enemy_turn = false;
+			for (int i = 0; i < NUM; i++) {//生きている敵全員にターンを渡す
+				if (m_Enemy[i].alive) {
+					m_Enemy[i].enemy_turn = false;
+				}
 			}
 		}
 		check = true;//この後の処理でcheckが変わらなければターンは終わっている
