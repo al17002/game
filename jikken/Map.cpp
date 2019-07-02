@@ -7,6 +7,7 @@
 
 static int image_floor;
 static int map[32][40] = {};
+int map_sur[32][40] = {};
 
 //階層の更新
 void floor_renew(int map_id) {
@@ -95,17 +96,32 @@ void Floor_Initialize() {
 
 //描画
 void Map_Draw() {
-	for (int i = 0; i < 32; i++)
-		for (int j = 0; j < 40; j++)
+	for (int i = 0; i < 32; i++) {
+		for (int j = 0; j < 40; j++) {
 			if (map[i][j] == 1)
-				DrawBox(j * 32, i * 32, (j + 1) * 32, (i + 1) * 32, GetColor(255, 255, 255), TRUE);
-			else if(map[i][j] == 2)
-				DrawBox(j * 32, i * 32, (j + 1) * 32, (i + 1) * 32, GetColor(0, 255, 0), TRUE);
-			else if (map[i][j]<=9 && map[i][j] >= 2)
+				DrawBox(j * 32, i * 32, (j + 1) * 32, (i + 1) * 32, GetColor(111, 51, 16), TRUE);
+			else if (map[i][j] <= 9 && map[i][j] >= 2)
 				DrawBox(j * 32, i * 32, (j + 1) * 32, (i + 1) * 32, GetColor(128, 128, 128), TRUE);
-				//DrawGraph(j * 32, i * 32, image_floor, TRUE);
+			//DrawGraph(j * 32, i * 32, image_floor, TRUE);
 			else if (map[i][j] >= 10)
 				DrawBox(j * 32, i * 32, (j + 1) * 32, (i + 1) * 32, GetColor(255, 255, 0), TRUE);
+		}
+	}
+	Map_Draw_Surround();
+}
+void Map_Draw_Surround() {
+	for (int i = 0; i < 32; i++){
+		for (int j = 0; j < 40; j++) {
+			map_sur[i][j] = map[i][j];
+			if (j >= player.x / 32 - 5 && j <= player.x / 32 + 5 && i >= player.y / 32 - 5 && i <= player.y / 32 + 5)
+				;
+			else {
+				map_sur[i][j] = 2;
+			}
+			if (map_sur[i][j] == 2)
+				DrawBox(j * 32, i * 32, (j - 1) * 32, (i - 1) * 32, GetColor(220, 220, 220), TRUE);
+		}
+	}
 }
 
 //マップの読み込み
