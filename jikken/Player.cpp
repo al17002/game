@@ -6,6 +6,7 @@
 #include "Savedata.h"
 #include "hitJudgment.h"
 #include "SceneMgr.h"
+#include "Enemymgr.h"
 
 // このファイル内でしか使えないグローバル変数
 static int m_Image; //画像ハンドル
@@ -85,9 +86,13 @@ void Player_Finalize() {
 
 
 void Death_Update() {
-	back_dataflow();
-	
-	if (CheckHitKey(KEY_INPUT_RETURN) != 0) SceneMgr_ChangeScene(eScene_WareHouse);
+	//back_dataflow();  //セーブについて確認したいときはこの関数を利用
+	//EnemyMgr_Finalize();
+	//Player_Finalize();
+	if (CheckHitKey(KEY_INPUT_RETURN) != 0) {
+		back_dataflow();
+		SceneMgr_ChangeScene(eScene_WareHouse);
+	}
 }
 
 void Death_Draw() {

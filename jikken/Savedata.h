@@ -63,3 +63,5 @@ typedef struct player_data {
 extern item_desc itemRef[100]; //[アイテムid] mapからうけとったデータに関して-10をもちいて使用する
 extern player_item_data player_item; //グローバル変数
 extern player_data player;
+extern player_item_data save_temp;
+

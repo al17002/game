@@ -10,24 +10,35 @@ player_data player;
 Enemy_t Enemy[];
 item_desc itemRef[100];
 
+
 void output_savedata(int num){//セーブ
     int i;
 	FILE *fp;
+	char *filename;
 	
 	switch(num){
         case 1:
-		    fopen_s(&fp,"savedata1.dat", "wb");
+			filename = "savedata1.dat";
+		    //fopen_s(&fp,"savedata1.dat", "wb");
             break;
         case 2:
-		    fopen_s(&fp, "savedata2.dat", "wb");
+			filename = "savedata2.dat";
+		    //fopen_s(&fp, "savedata2.dat", "wb");
             break;
         case 3:
-		    fopen_s(&fp, "savedata3.dat", "wb");
+			filename = "savedata3.dat";
+		    //fopen_s(&fp, "savedata3.dat", "wb");
             break;
 		default:
-			fopen_s(&fp, "savedata1.dat", "wb");
+			filename = "savedata1.dat";
+			//fopen_s(&fp, "savedata1.dat", "wb");
 			break;
 	}
+
+	fopen_s(&fp, filename, "wb");
+	fclose(fp);
+
+	fopen_s(&fp, filename, "wb");
 
     for(i=0;i<10;i++){
         fwrite(&player_item.having_item[i].ID,sizeof(int),1,fp);

@@ -17,18 +17,18 @@ void Title_Update() {
 	if (CheckHitKey(KEY_INPUT_V) != 0) { //Hキーが押されたら
 		input_savedata(0);
 		//dataflow();
-		Player_Initialize();
-		EnemyMgr_Initialize();
-		Floor_Initialize();
-		load_map(1);
+		//Player_Initialize();
+		//EnemyMgr_Initialize();
+		//Floor_Initialize();
+		//load_map(1);
 		SceneMgr_ChangeScene(eScene_WareHouse);//はじめから
 	}
 	if (CheckHitKey(KEY_INPUT_C) != 0) { //Cキーが押されたら
 		SceneMgr_ChangeScene(eScene_SaveSelect);//続きから
-		Player_Initialize();
-		EnemyMgr_Initialize();
-		Floor_Initialize();
-		load_map(1);
+		//Player_Initialize();
+		//EnemyMgr_Initialize();
+		//Floor_Initialize();
+		//load_map(1);
 	}
 }
 
