@@ -5,6 +5,7 @@
 #include "Game.h"
 #include "Savedata.h"
 #include "hitJudgment.h"
+#include "SceneMgr.h"
 
 // このファイル内でしか使えないグローバル変数
 static int m_Image; //画像ハンドル
@@ -80,4 +81,17 @@ void Player_Draw() {
 // 終了処理をする
 void Player_Finalize() {
 	DeleteGraph(m_Image);
+}
+
+
+void Death_Update() {
+	dataflow();
+	
+	if (CheckHitKey(KEY_INPUT_RETURN) != 0) SceneMgr_ChangeScene(eScene_WareHouse);
+}
+
+void Death_Draw() {
+	DrawString(400, 200, "GAME OVER!!", GetColor(255, 255, 255));
+	DrawString(100, 120, "PRESS ENTER KEY", GetColor(255, 255, 255));
+	
 }
