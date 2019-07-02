@@ -157,7 +157,7 @@ void output_itemdata() {
 	int i;
 	FILE *fp;
 
-	fopen_s(&fp, "itemdata.dat", "wb");
+	fopen_s(&fp, "item.dat", "wb");
 
 	for (i = 0; i < 100; i++) {
 		fread(itemRef[i].name, sizeof(char), sizeof(itemRef[i].name), fp);

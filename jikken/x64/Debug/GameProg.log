@@ -2,21 +2,16 @@
   EnemyMgr.cpp
   EquipmentChange.cpp
 z:\win\source\repos\game\jikken\equipmentchange.cpp(71): warning C4101: 'change': ローカル変数は 1 度も使われていません。
-  Game.cpp
-  hitJudgment.cpp
-  Keyboard.cpp
-  main.cpp
   Map.cpp
 z:\win\source\repos\game\jikken\map.cpp : warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
 z:\win\source\repos\game\jikken\map.cpp(130): warning C4101: 'end': ローカル変数は 1 度も使われていません。
   Menu.cpp
   Player.cpp
-  Save.cpp
-  Savedata.cpp
   SaveSelect.cpp
-  SceneMgr.cpp
+  Savedata.cpp
   Title.cpp
   WareHouse.cpp
+  hitJudgment.cpp
   コードを生成中...
   LINK : 前回のインクリメンタル リンクで Z:\win\source\repos\game\jikken\x64\Debug\GameProg.exe が見つからなかったか、ビルドされませんでした。フル リンクを行います。
   GameProg.vcxproj -> Z:\win\source\repos\game\jikken\x64\Debug\GameProg.exe
