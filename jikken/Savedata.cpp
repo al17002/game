@@ -2,6 +2,7 @@
 #include "Savedata.h"
 #include "enemy.h"
 #include "hitJudgment.h"
+#include "SceneMgr.h"
 
 
 player_item_data player_item;//グローバル変数
@@ -45,10 +46,8 @@ void output_savedata(int num){//セーブ
     fwrite(&player_item.equipment.ID,sizeof(int),1,fp);
 	fwrite(&player_item.equipment.atk, sizeof(int), 1, fp);
     fwrite(&player_item.equipment.hp,sizeof(int),1,fp);
-    
-
+   
     fclose(fp);
-
 }
 
 
@@ -100,17 +99,13 @@ void dataflow() {
 	int i;
 
 	for (i = 0; i < 10; i++) {
-		player.having_item[i].ID = player_item.having_item[i].ID;
-		player.having_item[i].atk = player_item.having_item[i].atk;
-		player.having_item[i].hp = player_item.having_item[i].hp;
+		player.having_item[i] = player_item.having_item[i];
 	}
 
 	player.itemnum = player_item.itemnum;
 
 
-	player.equipment.ID = player_item.equipment.ID;
-	player.equipment.atk = player_item.equipment.atk;
-	player.equipment.hp = player_item.equipment.hp;
+	player.equipment = player_item.equipment;
 }
 
 void back_dataflow() {
@@ -118,17 +113,14 @@ void back_dataflow() {
 	int i;
 
 	for (i = 0; i < 10; i++) {
-		player_item.having_item[i].ID = player.having_item[i].ID;
-		player_item.having_item[i].atk = player.having_item[i].atk;
-		player_item.having_item[i].hp = player.having_item[i].hp;
+		player_item.having_item[i] = player.having_item[i];
 	}
 
 	player_item.itemnum = player.itemnum;
 
 
-	player_item.equipment.ID = player.equipment.ID;
-	player_item.equipment.atk = player.equipment.atk;
-	player_item.equipment.hp = player.equipment.hp;
+	player_item.equipment = player.equipment;
+
 }
 
 //プレイヤーを移動
@@ -146,8 +138,8 @@ void add_item(int n) {
 	}
 	else {
 		player.having_item[player.itemnum].ID = n - 10;
-		player.having_item[player.itemnum].atk = 1;
-		player.having_item[player.itemnum].hp = 1;
+		player.having_item[player.itemnum].atk = itemRef[player.having_item[player.itemnum].ID].atk;
+		player.having_item[player.itemnum].hp = itemRef[player.having_item[player.itemnum].ID].hp;
 		player.itemnum += 1;
 	}
 
@@ -168,7 +160,21 @@ void hit_enemy(int enemy_id) {
 //敵がプレイヤーを攻撃
 void hit_player(int enemy_id) {
 	player.equipment.hp -= m_Enemy[enemy_id].equipment.atk;
+	if (player.equipment.hp <= 0) {//プレイヤーの装備が壊れる
+		if (player.having_item[0].ID != 0) {
+			player.equipment = player.having_item[0];
+			player.itemnum -= 1;
+			for (int i = 0; i < 9; i++) {
+				player.having_item[i] = player.having_item[i + 1];
+			}
+		}else {
+			SceneMgr_ChangeScene(eScene_Death);
+		}
+	}
+	
+	
 }
+
 
 //アイテムデータを出力
 void output_itemdata() {
