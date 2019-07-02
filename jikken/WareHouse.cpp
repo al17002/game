@@ -10,9 +10,6 @@ void WareHouse_Update() {
 	if (CheckHitKey(KEY_INPUT_T) != 0) {
 		SceneMgr_ChangeScene(eScene_Title);
 	}
-	if (CheckHitKey(KEY_INPUT_S) != 0) {
-		SceneMgr_ChangeScene(eScene_Save);
-	}
 	if (CheckHitKey(KEY_INPUT_E) != 0) {
 		DxLib_End();
 	}
@@ -23,9 +20,8 @@ void WareHouse_Draw() {
 	int i;
 	DrawString(20, 20, "ゲーム遷移画面", GetColor(255, 255, 255));
 	DrawString(20, 40, "G:ゲーム画面へ", GetColor(255, 255, 255));
-	DrawString(20, 80, "S:セーブデータ保存", GetColor(255, 255, 255));
-	DrawString(20, 100, "T:タイトルへ戻る", GetColor(255, 255, 255));
-	DrawString(20,120, "E:終了", GetColor(255, 255, 255));
+	DrawString(20, 60, "T:タイトルへ戻る", GetColor(255, 255, 255));
+	DrawString(20,80, "E:終了", GetColor(255, 255, 255));
 	DrawString(20, 160, "装備情報", GetColor(255, 255, 255));
 	//s = "キャラクタ管理部の関数";
 	DrawFormatString(20, 180, GetColor(255, 255, 255), "装備中:%d atk:%d hp:%d", player_item.equipment.ID, player_item.equipment.atk, player_item.equipment.hp);
