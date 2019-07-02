@@ -112,12 +112,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="item.dat">
-      <Filter>リソース ファイル</Filter>
-    </None>
-    <None Include="itemdata.dat">
-      <Filter>リソース ファイル</Filter>
-    </None>
     <None Include="new_savedata.dat">
       <Filter>リソース ファイル</Filter>
     </None>

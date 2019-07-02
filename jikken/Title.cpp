@@ -7,7 +7,7 @@
 void Title_Update() {
 	if (CheckHitKey(KEY_INPUT_H) != 0) { //Hキーが押されたら
 		input_savedata(0);
-		dataflow();
+		//dataflow();
 		SceneMgr_ChangeScene(eScene_WareHouse);//はじめから
 	}
 	if (CheckHitKey(KEY_INPUT_C) != 0) { //Cキーが押されたら

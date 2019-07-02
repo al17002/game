@@ -12,6 +12,8 @@ void output_savedata(int num);
 void input_savedata(int num);
 //データの移し替え
 void dataflow();
+
+void back_dataflow();
 //プレイヤーを移動
 void move_player(int move_x, int move_y);
 //アイテムを追加
