@@ -27,6 +27,6 @@ void WareHouse_Draw() {
 	//s = "ƒLƒƒƒ‰ƒNƒ^ŠÇ—•”‚ÌŠÖ”";
 	DrawFormatString(20, 180, GetColor(255, 255, 255), "‘•”õ’†:%s atk:%d hp:%d", itemRef[player_item.equipment.ID].name, player_item.equipment.atk, player_item.equipment.hp);
 	for (i = 0; i < 10; i++) {//”ÍˆÍ‚Íplayer_item.itemnum
-		DrawFormatString(20, 200 + 20 * i, GetColor(255, 255, 255), "%d:%d atk:%d hp:%d", i, player_item.having_item[i].ID, player_item.having_item[i].atk, player_item.having_item[i].hp);
+		DrawFormatString(20, 200 + 20 * i, GetColor(255, 255, 255), "%d:%s atk:%d hp:%d", i,itemRef[player_item.having_item[i].ID].name, player_item.having_item[i].atk, player_item.having_item[i].hp);
 	}
 }
