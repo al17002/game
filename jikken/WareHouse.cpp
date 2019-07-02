@@ -5,7 +5,7 @@
 //更新
 void WareHouse_Update() {
 	if (CheckHitKey(KEY_INPUT_G) != 0) {//Gキーが押されていたら
-		//dataflow();
+		dataflow();
 		SceneMgr_ChangeScene(eScene_Game);//シーンをゲーム画面に変更
 	}
 	if (CheckHitKey(KEY_INPUT_T) != 0) {
