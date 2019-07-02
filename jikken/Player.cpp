@@ -85,7 +85,7 @@ void Player_Finalize() {
 
 
 void Death_Update() {
-	dataflow();
+	back_dataflow();
 	
 	if (CheckHitKey(KEY_INPUT_RETURN) != 0) SceneMgr_ChangeScene(eScene_WareHouse);
 }

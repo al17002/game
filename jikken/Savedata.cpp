@@ -142,7 +142,6 @@ void add_item(int n) {
 		player.having_item[player.itemnum].hp = itemRef[player.having_item[player.itemnum].ID].hp;
 		player.itemnum += 1;
 	}
-
 }
 
 //プレイヤーが敵を攻撃
