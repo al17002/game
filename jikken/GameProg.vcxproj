@@ -54,6 +54,7 @@
     <ClCompile Include="WareHouse.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="item.dat" />
     <None Include="new_savedata.dat" />
     <None Include="savedata1.dat" />
     <None Include="savedata2.dat" />
