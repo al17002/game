@@ -120,7 +120,7 @@ void back_dataflow() {
 	for (i = 0; i < 10; i++) {
 		player_item.having_item[i].ID = player.having_item[i].ID;
 		player_item.having_item[i].atk = player.having_item[i].atk;
-		player.having_item[i].hp = player.having_item[i].hp;
+		player_item.having_item[i].hp = player.having_item[i].hp;
 	}
 
 	player_item.itemnum = player.itemnum;
