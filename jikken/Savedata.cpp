@@ -113,6 +113,24 @@ void dataflow() {
 	player.equipment.hp = player_item.equipment.hp;
 }
 
+void back_dataflow() {
+
+	int i;
+
+	for (i = 0; i < 10; i++) {
+		player_item.having_item[i].ID = player.having_item[i].ID;
+		player_item.having_item[i].atk = player.having_item[i].atk;
+		player_item.having_item[i].hp = player.having_item[i].hp;
+	}
+
+	player_item.itemnum = player.itemnum;
+
+
+	player_item.equipment.ID = player.equipment.ID;
+	player_item.equipment.atk = player.equipment.atk;
+	player_item.equipment.hp = player.equipment.hp;
+}
+
 //プレイヤーを移動
 void move_player(int move_x,int move_y){
 
@@ -157,7 +175,7 @@ void output_itemdata() {
 	int i;
 	FILE *fp;
 
-	fopen_s(&fp, "itemdata.dat", "wb");
+	fopen_s(&fp, "item.dat", "rb");
 
 	for (i = 0; i < 100; i++) {
 		fread(itemRef[i].name, sizeof(char), sizeof(itemRef[i].name), fp);
