@@ -110,7 +110,7 @@ void Map_Draw() {
 			}
 		}
 	}
-	//Map_Draw_Surround();
+	Map_Draw_Surround();
 }
 void Map_Draw_Surround() {
 	for (int i = 0; i < 32; i++){
