@@ -94,8 +94,8 @@ void EquipmentChange_Draw() {
 	DrawString(0, 20, "M:メニュー画面に戻る", GetColor(255, 255, 255));
 	DrawString(0, 40, "T:タイトルに移動", GetColor(255, 255, 255));
 	DrawString(0, 60, "アイテム情報", GetColor(255, 255, 255));//データ1アイテム情報
-	DrawFormatString(0, 100, GetColor(255, 255, 255), "装備中:%d atk:%d hp:%d", player.equipment.ID, player.equipment.atk, player.equipment.hp);
+	DrawFormatString(0, 100, GetColor(255, 255, 255), "装備中:%s atk:%d hp:%d", itemRef[player.equipment.ID].name, player.equipment.atk, player.equipment.hp);
 	for (i = 0; i < 10; i++) {//範囲はplayer_item.itemnum
-		DrawFormatString(20, 140 + 20 * i, GetColor(255, 255, 255), "%d:%d atk:%d hp:%d", i, player.having_item[i].ID, player.having_item[i].atk, player.having_item[i].hp);
+		DrawFormatString(20, 140 + 20 * i, GetColor(255, 255, 255), "%d:%s atk:%d hp:%d", i, itemRef[player.having_item[i].ID].name, player.having_item[i].atk, player.having_item[i].hp);
 	}
 }
