@@ -19,9 +19,9 @@ void Game_Update() {
 	Player_Update();
 	EnemyMgr_Update();
 
+	Map_Draw();
 	Player_Draw();
 	EnemyMgr_Draw();
-	Map_Draw();
 
 }
 

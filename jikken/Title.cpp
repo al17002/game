@@ -5,6 +5,7 @@
 #include "Player.h"
 #include "EnemyMgr.h"
 #include "Map.h"
+#include "hitJudgment.h"
 
 //XV
 void Title_Update() {
