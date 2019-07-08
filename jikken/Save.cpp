@@ -2,6 +2,7 @@
 #include "SceneMgr.h"
 #include "DxLib.h"
 #include "Savedata.h"
+#include "Title.h"
 
 //更新
 void Save_Update() {
@@ -31,24 +32,27 @@ void Save_Update() {
 //描画
 void Save_Draw() {
 	int i;
-	DrawString(0, 0, "セーブ保存画面(番号をプッシュしてセーブデータを保存)", GetColor(255, 255, 255));
-	DrawString(0, 20, "W:倉庫画面に戻る", GetColor(255, 255, 255));
-	DrawString(0, 80, "1.アイテム情報", GetColor(255, 255, 255));//データ1アイテム情報
+	DrawStringToHandle(350, 50, "セーブ保存画面(番号をプッシュしてセーブデータを保存)", GetColor(255, 255, 255),Font01);
+	DrawStringToHandle(550, 150, "W:セーブ遷移画面に戻る", GetColor(255, 255, 255),Font01);
+	DrawStringToHandle(30, 300, "1.アイテム情報", GetColor(255, 255, 255),Font01);//データ1アイテム情報
 	input_savedata(1);
-	DrawFormatString(0, 100, GetColor(255, 255, 255), "装備中:%s atk:%d hp:%d", itemRef[player_item.equipment.ID].name, player_item.equipment.atk, player_item.equipment.hp);
+	DrawFormatStringToHandle(30, 400, GetColor(255, 255, 255),Font01, "装備中:%s atk:%d hp:%d", itemRef[player_item.equipment.ID].name, player_item.equipment.atk, player_item.equipment.hp);
+	DrawStringToHandle(30, 500, "所持アイテム", GetColor(255, 255, 255), Font01);
 	for (i = 0; i < 10; i++) {//範囲はplayer_item.itemnum
-		DrawFormatString(0, 120 + 20 * i, GetColor(255, 255, 255), "%d:%s atk:%d hp:%d", i, itemRef[player_item.having_item[i].ID].name, player_item.having_item[i].atk, player_item.having_item[i].hp);
+		DrawFormatStringToHandle(30, 550 + 40 * i, GetColor(255, 255, 255),Font01, "%d:%s atk:%d hp:%d", i, itemRef[player_item.having_item[i].ID].name, player_item.having_item[i].atk, player_item.having_item[i].hp);
 	}
-	DrawString(0, 340, "2.アイテム情報", GetColor(255, 255, 255));//データ2アイテム情報
+	DrawStringToHandle(530, 300, "2.アイテム情報", GetColor(255, 255, 255),Font01);//データ2アイテム情報
 	input_savedata(2);
-	DrawFormatString(0, 360, GetColor(255, 255, 255), "装備中:%s atk:%d hp:%d", itemRef[player_item.equipment.ID].name, player_item.equipment.atk, player_item.equipment.hp);
+	DrawFormatStringToHandle(530, 400, GetColor(255, 255, 255),Font01, "装備中:%s atk:%d hp:%d", itemRef[player_item.equipment.ID].name, player_item.equipment.atk, player_item.equipment.hp);
+	DrawStringToHandle(530, 500, "所持アイテム", GetColor(255, 255, 255), Font01);
 	for (i = 0; i < 10; i++) {
-		DrawFormatString(0, 380 + 20 * i, GetColor(255, 255, 255), "%d:%s atk:%d hp:%d", i, itemRef[player_item.having_item[i].ID].name, player_item.having_item[i].atk, player_item.having_item[i].hp);
+		DrawFormatStringToHandle(530, 550 + 40 * i, GetColor(255, 255, 255),Font01, "%d:%s atk:%d hp:%d", i, itemRef[player_item.having_item[i].ID].name, player_item.having_item[i].atk, player_item.having_item[i].hp);
 	}
-	DrawString(0, 600, "3.アイテム情報", GetColor(255, 255, 255));//データ2アイテム情報
+	DrawStringToHandle(1030, 300, "3.アイテム情報", GetColor(255, 255, 255),Font01);//データ2アイテム情報
 	input_savedata(3);
-	DrawFormatString(0, 620, GetColor(255, 255, 255), "装備中:%s atk:%d hp:%d", itemRef[player_item.equipment.ID].name, player_item.equipment.atk, player_item.equipment.hp);
+	DrawFormatStringToHandle(1030, 400, GetColor(255, 255, 255),Font01, "装備中:%s atk:%d hp:%d", itemRef[player_item.equipment.ID].name, player_item.equipment.atk, player_item.equipment.hp);
+	DrawStringToHandle(1030, 500, "所持アイテム", GetColor(255, 255, 255), Font01);
 	for (i = 0; i < 10; i++) {
-		DrawFormatString(0, 640 + 20 * i, GetColor(255, 255, 255), "%d:%s atk:%d hp:%d", i, itemRef[player_item.having_item[i].ID].name, player_item.having_item[i].atk, player_item.having_item[i].hp);
+		DrawFormatStringToHandle(1030, 550 + 40 * i, GetColor(255, 255, 255),Font01, "%d:%s atk:%d hp:%d", i, itemRef[player_item.having_item[i].ID].name, player_item.having_item[i].atk, player_item.having_item[i].hp);
 	}
 }

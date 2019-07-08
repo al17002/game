@@ -3,6 +3,7 @@
 #include "DxLib.h"
 #include "savedata.h"
 #include "Keyboard.h"
+#include "Title.h"
 //更新
 void EquipmentChange_Update() {
 	player_data change;
@@ -90,12 +91,13 @@ void EquipmentChange_Update() {
 void EquipmentChange_Draw() {
 	item change;
 	int i;
-	DrawString(0, 0, "装備変更画面(番号をプッシュして装備変更情報を保存)", GetColor(255, 255, 255));
-	DrawString(0, 20, "M:メニュー画面に戻る", GetColor(255, 255, 255));
-	DrawString(0, 40, "T:タイトルに移動", GetColor(255, 255, 255));
-	DrawString(0, 60, "アイテム情報", GetColor(255, 255, 255));//データ1アイテム情報
-	DrawFormatString(0, 100, GetColor(255, 255, 255), "装備中:%s atk:%d hp:%d", itemRef[player.equipment.ID].name, player.equipment.atk, player.equipment.hp);
+	DrawStringToHandle(350, 50, "装備変更画面(番号をプッシュして装備変更情報を保存)", GetColor(255, 255, 255),Font01);
+	DrawStringToHandle(550, 150, "M:メニュー画面に戻る", GetColor(255, 255, 255),Font01);
+	DrawStringToHandle(550, 200, "T:タイトルに移動", GetColor(255, 255, 255),Font01);
+	DrawStringToHandle(550, 350, "アイテム情報", GetColor(255, 255, 255),Font01);//データ1アイテム情報
+	DrawFormatStringToHandle(550, 420, GetColor(255, 255, 255),Font01, "装備中:%s atk:%d hp:%d", itemRef[player.equipment.ID].name, player.equipment.atk, player.equipment.hp);
+	DrawStringToHandle(550, 490, "所持アイテム", GetColor(255, 255, 255), Font01);
 	for (i = 0; i < 10; i++) {//範囲はplayer_item.itemnum
-		DrawFormatString(20, 140 + 20 * i, GetColor(255, 255, 255), "%d:%s atk:%d hp:%d", i, itemRef[player.having_item[i].ID].name, player.having_item[i].atk, player.having_item[i].hp);
+		DrawFormatStringToHandle(550, 540 + 40 * i, GetColor(255, 255, 255),Font01, "%d:%s atk:%d hp:%d", i, itemRef[player.having_item[i].ID].name, player.having_item[i].atk, player.having_item[i].hp);
 	}
 }

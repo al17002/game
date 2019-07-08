@@ -34,7 +34,7 @@ void Title_Update() {
 
 //描画
 void Title_Draw() {
-		DrawStringToHandle(400, 50, "ローグライクゲーム(仮)", GetColor(255, 255, 255), Font02);
-		DrawStringToHandle(500, 300, "V:はじめから", GetColor(255, 255, 255), Font02);
-		DrawStringToHandle(500, 600, "C:続きから", GetColor(255, 255, 255), Font02);
+		DrawStringToHandle(350, 200, "ローグライクゲーム(仮)", GetColor(255, 255, 255), Font02);
+		DrawStringToHandle(500, 450, "V:はじめから", GetColor(255, 255, 255), Font02);
+		DrawStringToHandle(500, 650, "C:続きから", GetColor(255, 255, 255), Font02);
 }
