@@ -35,6 +35,9 @@ void SceneMgr_Update() {
 	case eScene_WareHouse:
 		WareHouse_Update();
 		break;
+	case eScene_Death:
+		Death_Update();
+		break;
 	}
 }
 
@@ -61,6 +64,9 @@ void SceneMgr_Draw() {
 		break;
 	case eScene_WareHouse:
 		WareHouse_Draw();
+		break;
+	case eScene_Death:
+		Death_Draw();
 		break;
 	}
 

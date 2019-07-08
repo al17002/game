@@ -18,5 +18,8 @@ void Floor_Initialize();
 //描画
 void Map_Draw();
 
+//プレイヤーの周囲以外黒を描画
+void Map_Draw_Surround();
+
 //マップの読み込み
 void load_map(int map_id);

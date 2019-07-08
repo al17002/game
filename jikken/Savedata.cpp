@@ -2,6 +2,7 @@
 #include "Savedata.h"
 #include "enemy.h"
 #include "hitJudgment.h"
+#include "SceneMgr.h"
 
 
 player_item_data player_item;//グローバル変数
@@ -9,24 +10,35 @@ player_data player;
 Enemy_t Enemy[];
 item_desc itemRef[100];
 
+
 void output_savedata(int num){//セーブ
     int i;
 	FILE *fp;
+	char *filename;
 	
 	switch(num){
         case 1:
-		    fopen_s(&fp,"savedata1.dat", "wb");
+			filename = "savedata1.dat";
+		    //fopen_s(&fp,"savedata1.dat", "wb");
             break;
         case 2:
-		    fopen_s(&fp, "savedata2.dat", "wb");
+			filename = "savedata2.dat";
+		    //fopen_s(&fp, "savedata2.dat", "wb");
             break;
         case 3:
-		    fopen_s(&fp, "savedata3.dat", "wb");
+			filename = "savedata3.dat";
+		    //fopen_s(&fp, "savedata3.dat", "wb");
             break;
 		default:
-			fopen_s(&fp, "savedata1.dat", "wb");
+			filename = "savedata1.dat";
+			//fopen_s(&fp, "savedata1.dat", "wb");
 			break;
 	}
+
+	fopen_s(&fp, filename, "wb");
+	fclose(fp);
+
+	fopen_s(&fp, filename, "wb");
 
     for(i=0;i<10;i++){
         fwrite(&player_item.having_item[i].ID,sizeof(int),1,fp);
@@ -45,10 +57,8 @@ void output_savedata(int num){//セーブ
     fwrite(&player_item.equipment.ID,sizeof(int),1,fp);
 	fwrite(&player_item.equipment.atk, sizeof(int), 1, fp);
     fwrite(&player_item.equipment.hp,sizeof(int),1,fp);
-    
-
+   
     fclose(fp);
-
 }
 
 
@@ -100,17 +110,28 @@ void dataflow() {
 	int i;
 
 	for (i = 0; i < 10; i++) {
-		player.having_item[i].ID = player_item.having_item[i].ID;
-		player.having_item[i].atk = player_item.having_item[i].atk;
-		player.having_item[i].hp = player_item.having_item[i].hp;
+		player.having_item[i] = player_item.having_item[i];
 	}
 
 	player.itemnum = player_item.itemnum;
 
 
-	player.equipment.ID = player_item.equipment.ID;
-	player.equipment.atk = player_item.equipment.atk;
-	player.equipment.hp = player_item.equipment.hp;
+	player.equipment = player_item.equipment;
+}
+
+void back_dataflow() {
+
+	int i;
+
+	for (i = 0; i < 10; i++) {
+		player_item.having_item[i] = player.having_item[i];
+	}
+
+	player_item.itemnum = player.itemnum;
+
+
+	player_item.equipment = player.equipment;
+
 }
 
 //プレイヤーを移動
@@ -128,11 +149,10 @@ void add_item(int n) {
 	}
 	else {
 		player.having_item[player.itemnum].ID = n - 10;
-		player.having_item[player.itemnum].atk = 1;
-		player.having_item[player.itemnum].hp = 1;
+		player.having_item[player.itemnum].atk = itemRef[player.having_item[player.itemnum].ID].atk;
+		player.having_item[player.itemnum].hp = itemRef[player.having_item[player.itemnum].ID].hp;
 		player.itemnum += 1;
 	}
-
 }
 
 //プレイヤーが敵を攻撃
@@ -150,14 +170,28 @@ void hit_enemy(int enemy_id) {
 //敵がプレイヤーを攻撃
 void hit_player(int enemy_id) {
 	player.equipment.hp -= m_Enemy[enemy_id].equipment.atk;
+	if (player.equipment.hp <= 0) {//プレイヤーの装備が壊れる
+		if (player.having_item[0].ID != 0) {
+			player.equipment = player.having_item[0];
+			player.itemnum -= 1;
+			for (int i = 0; i < 9; i++) {
+				player.having_item[i] = player.having_item[i + 1];
+			}
+		}else {
+			SceneMgr_ChangeScene(eScene_Death);
+		}
+	}
+	
+	
 }
+
 
 //アイテムデータを出力
 void output_itemdata() {
 	int i;
 	FILE *fp;
 
-	fopen_s(&fp, "itemdata.dat", "wb");
+	fopen_s(&fp, "item.dat", "rb");
 
 	for (i = 0; i < 100; i++) {
 		fread(itemRef[i].name, sizeof(char), sizeof(itemRef[i].name), fp);

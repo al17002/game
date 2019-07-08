@@ -11,3 +11,6 @@ void Player_Draw();
 
 // I—¹ˆ—‚ğ‚·‚é
 void Player_Finalize();
+
+void Death_Update();
+void Death_Draw();

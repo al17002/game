@@ -12,6 +12,8 @@ void output_savedata(int num);
 void input_savedata(int num);
 //データの移し替え
 void dataflow();
+
+void back_dataflow();
 //プレイヤーを移動
 void move_player(int move_x, int move_y);
 //アイテムを追加
@@ -61,3 +63,5 @@ typedef struct player_data {
 extern item_desc itemRef[100]; //[アイテムid] mapからうけとったデータに関して-10をもちいて使用する
 extern player_item_data player_item; //グローバル変数
 extern player_data player;
+extern player_item_data save_temp;
+

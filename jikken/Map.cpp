@@ -4,11 +4,13 @@
 #include "EnemyMgr.h"
 #include "Savedata.h"
 
+static int image[16];
 
 static int image_floor;
 static int map[32][40] = {};
+int map_sur[32][40] = {};
 
-//éšå±¤ã®æ›´æ–°
+//ŠK‘w‚ÌXV
 void floor_renew(int map_id) {
 	load_map(map_id);
 	EnemyMgr_Finalize();
@@ -17,7 +19,7 @@ void floor_renew(int map_id) {
 	Player_Initialize();
 }
 
-//ã‚¢ã‚¤ãƒ†ãƒ ã‚¤ãƒ™ãƒ³ãƒˆã®ç™ºç”Ÿ
+//ƒAƒCƒeƒ€ƒCƒxƒ“ƒg‚Ì”­¶
 void item_event(int n) {
 	add_item(n);
 }
@@ -27,23 +29,23 @@ void floor_event(int n) {
 		floor_renew(2);
 	}
 }
-//é€²ã‚ã‚‹ã‹ã‚’åˆ¤å®šã™ã‚‹
+//i‚ß‚é‚©‚ğ”»’è‚·‚é
 int IsAbleToGo(int x, int y, int muki) {
-	if (muki == 0) {//ä¸Šå‘ããªã‚‰
+	if (muki == 0) {//ãŒü‚«‚È‚ç
 		if (map[y / 32 - 1][x / 32] == 1){ 
-			return 1;//å£
+			return 1;//•Ç
 		}
 		else if (map[y / 32 - 1][x / 32] <= 9 && map[y / 32 - 1][x / 32] >= 2) {
-			floor_event(map[y / 32 - 1][x / 32]); //é€²ã‚€å…ˆã®2<=map[][]=<9ã®ã¨ãã€floor_eventé–¢æ•°å‘¼ã³å‡ºã—
+			floor_event(map[y / 32 - 1][x / 32]); //i‚Şæ‚Ì2<=map[][]=<9‚Ì‚Æ‚«Afloor_eventŠÖ”ŒÄ‚Ño‚µ
 			return 0;
 		}
 		else if (map[y / 32 - 1][x / 32] >= 10) {
-			item_event(map[y / 32 - 1][x / 32]); //é€²ã‚€å…ˆã®map[][]>=10ã®ã¨ãã€item_eventé–¢æ•°å‘¼ã³å‡ºã—
+			item_event(map[y / 32 - 1][x / 32]); //i‚Şæ‚Ìmap[][]>=10‚Ì‚Æ‚«Aitem_eventŠÖ”ŒÄ‚Ño‚µ
 			map[y / 32 - 1][x / 32] = 0;
 			return 0;
 		}
 	}
-	if (muki == 1) {//å·¦å‘ããªã‚‰
+	if (muki == 1) {//¶Œü‚«‚È‚ç
 		if (map[y / 32][x / 32 - 1] == 1) {
 			return 1;
 		}
@@ -58,7 +60,7 @@ int IsAbleToGo(int x, int y, int muki) {
 		}
 	}
 
-	if (muki == 2) {//ä¸‹å‘ããªã‚‰
+	if (muki == 2) {//‰ºŒü‚«‚È‚ç
 		if (map[y / 32 + 1][x / 32] == 1) {
 			return 1;
 		}
@@ -72,7 +74,7 @@ int IsAbleToGo(int x, int y, int muki) {
 			return 0;
 		}
 	}
-	if (muki == 3) {//å³å‘ããªã‚‰
+	if (muki == 3) {//‰EŒü‚«‚È‚ç
 		if (map[y / 32][x / 32 + 1] == 1) {
 			return 1;
 		}
@@ -86,29 +88,46 @@ int IsAbleToGo(int x, int y, int muki) {
 			return 0;
 		}
 	}
-	return 0;//æ­£å¸¸
+	return 0;//³í
 }
-
+static int m_Image;
 void Floor_Initialize() {
-	//image_floor=LoadGraph("ç”»åƒ/éšæ®µ.png");
+	image_floor=LoadGraph("‰æ‘œ/ŠK’i.png");
 }
 
-//æç”»
+//•`‰æ
 void Map_Draw() {
-	for (int i = 0; i < 32; i++)
-		for (int j = 0; j < 40; j++)
-			if (map[i][j] == 1)
-				DrawBox(j * 32, i * 32, (j + 1) * 32, (i + 1) * 32, GetColor(255, 255, 255), TRUE);
-			else if(map[i][j] == 2)
-				DrawBox(j * 32, i * 32, (j + 1) * 32, (i + 1) * 32, GetColor(0, 255, 0), TRUE);
-			else if (map[i][j]<=9 && map[i][j] >= 2)
-				DrawBox(j * 32, i * 32, (j + 1) * 32, (i + 1) * 32, GetColor(128, 128, 128), TRUE);
-				//DrawGraph(j * 32, i * 32, image_floor, TRUE);
-			else if (map[i][j] >= 10)
+	for (int i = 0; i < 32; i++) {
+		for (int j = 0; j < 40; j++) {
+			if (map[i][j] == 1) {
+				DrawBox(j * 32, i * 32, (j + 1) * 32, (i + 1) * 32, GetColor(111, 51, 16), TRUE);
+			}
+			else if(map[i][j] == 3){
+				DrawGraph(j * 32, i * 32, image_floor, TRUE);
+			}
+			else if (map[i][j] >= 10) {
 				DrawBox(j * 32, i * 32, (j + 1) * 32, (i + 1) * 32, GetColor(255, 255, 0), TRUE);
+			}
+		}
+	}
+	Map_Draw_Surround();
+}
+void Map_Draw_Surround() {
+	for (int i = 0; i < 32; i++){
+		for (int j = 0; j < 40; j++) {
+			map_sur[i][j] = map[i][j];
+			if (j >= player.x / 32 - 5 && j <= player.x / 32 + 5 && i >= player.y / 32 - 5 && i <= player.y / 32 + 5)
+				;
+			else {
+				map_sur[i][j] = 2;
+			}
+			if (map_sur[i][j] == 2)
+				DrawBox(j * 32, i * 32, (j - 1) * 32, (i - 1) * 32, GetColor(220, 220, 220), TRUE);
+		}
+	}
 }
 
-//ãƒãƒƒãƒ—ã®èª­ã¿è¾¼ã¿
+//ƒ}ƒbƒv‚Ì“Ç‚İ‚İ
 void load_map(int map_id) {
 	int i = 0, j = 0;
 	FILE *fp;
