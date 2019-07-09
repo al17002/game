@@ -17,9 +17,9 @@ void Enemy_Initialize(Enemy_t *Enemy,int x, int y, int *img,int num) {
 	Enemy->x = x;		//xÀ•WŠi”[
 	Enemy->muki = 0;
 	Enemy->walking_flag = 0;
-	Enemy->equipment.ID = 1;
-	Enemy->equipment.atk = 1;
-	Enemy->equipment.hp = 1;
+	Enemy->equipment.ID = 2;
+	Enemy->equipment.atk = itemRef[Enemy->equipment.ID].atk;
+	Enemy->equipment.hp = itemRef[Enemy->equipment.ID].hp;
 	Enemy->enemy_turn = false;
 	Enemy->alive = true;
 }

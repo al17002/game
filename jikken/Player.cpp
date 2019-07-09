@@ -100,3 +100,18 @@ void Death_Draw() {
 	DrawString(100, 120, "PRESS ENTER KEY", GetColor(255, 255, 255));
 	
 }
+
+void Win_Update() {
+	//back_dataflow();  //セーブについて確認したいときはこの関数を利用
+	//EnemyMgr_Finalize();
+	//Player_Finalize();
+	if (CheckHitKey(KEY_INPUT_RETURN) != 0) {
+		back_dataflow();
+		SceneMgr_ChangeScene(eScene_WareHouse);
+	}
+}
+
+void Win_Draw() {
+	DrawString(400, 200, "GAME CLEAR!!", GetColor(255, 255, 255));
+	DrawString(100, 120, "PRESS ENTER KEY", GetColor(255, 255, 255));
+}

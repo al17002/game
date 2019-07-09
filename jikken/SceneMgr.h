@@ -8,7 +8,8 @@ typedef enum {
 	eScene_Save, //セーブデータ保存
 	eScene_EquipmentChange, //装備変更
 	eScene_WareHouse,
-	eScene_Death
+	eScene_Death,
+	eScene_Win
 } eScene;
 
 //更新

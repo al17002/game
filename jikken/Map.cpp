@@ -3,18 +3,21 @@
 #include "Player.h"
 #include "EnemyMgr.h"
 #include "Savedata.h"
-
+#include "SceneMgr.h"
+#include "hitJudgment.h"
 static int image[16];
 
 static int image_floor;
 static int map[32][40] = {};
 int map_sur[32][40] = {};
+static int current_map = 1;
 
 //ŠK‘w‚ÌXV
 void floor_renew(int map_id) {
 	load_map(map_id);
 	EnemyMgr_Finalize();
 	Player_Finalize();
+	clearHitbox();
 	EnemyMgr_Initialize();
 	Player_Initialize();
 }
@@ -26,7 +29,14 @@ void item_event(int n) {
 
 void floor_event(int n) {
 	if (n == 3) {
-		floor_renew(2);
+		current_map++;
+		if (current_map < 3) {
+			floor_renew(current_map);
+		}
+		else {//clear
+			SceneMgr_ChangeScene(eScene_Win);
+			current_map = 1;
+		}
 	}
 }
 //i‚ß‚é‚©‚ğ”»’è‚·‚é
