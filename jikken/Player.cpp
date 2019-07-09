@@ -19,7 +19,7 @@ static int image[16];
 void Player_Initialize() {
 	LoadDivGraph("‰æ‘œ/ƒLƒƒƒ‰ƒNƒ^10.png", 16, 4, 4, 32, 32, image);
 	m_Image = image[(player.x % 32 + player.y % 32) / 8 + muki * 4];
-	player.x = 320;
+	player.x = 160;
 	player.y = 160;
 }
 

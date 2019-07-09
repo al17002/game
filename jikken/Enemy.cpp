@@ -1,4 +1,6 @@
 #include "DxLib.h"
+#include <stdlib.h>
+#include <stdio.h>
 #include "Keyboard.h"
 #include "Enemy.h"
 #include "Map.h"
@@ -41,7 +43,11 @@ void Enemy_Update(Enemy_t *Enemy) {
 				else if (player.x > Enemy->x && (IsAbleToGo(Enemy->x, Enemy->y, 3, false) != 1))  //右にいるなら
 					Enemy->muki = 3;         //右向きフラグを立てる
 				else                                    //何のボタンも押されてなかったら
-					Enemy->walking_flag = 1; //まあ頑張って左に歩くフラグを立てる
+					Enemy->walking_flag = 1; //まあ頑張って
+			}
+			if (abs(Enemy->x - player.x) > 200 || abs(Enemy->y - player.y) > 200) {
+				Enemy->walking_flag = 0;
+				Enemy->enemy_turn = true;
 			}
 			if (Enemy->walking_flag == 1) {
 				if (IsAbleToGo(Enemy->x, Enemy->y, Enemy->muki,false) == 1) {

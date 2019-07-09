@@ -158,7 +158,7 @@ void add_item(int n) {
 //プレイヤーが敵を攻撃
 void hit_enemy(int enemy_id) {
 	m_Enemy[enemy_id].equipment.hp -= player.equipment.atk;
-	if (m_Enemy[enemy_id].equipment.hp < 0) {//敵が死亡
+	if (m_Enemy[enemy_id].equipment.hp <= 0) {//敵が死亡
 		removeHitbox(m_Enemy[enemy_id].y, m_Enemy[enemy_id].x);
 		m_Enemy[enemy_id].y = 0;
 		m_Enemy[enemy_id].x = 0;
