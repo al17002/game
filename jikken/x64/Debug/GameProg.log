@@ -1,2 +1,3 @@
 ﻿  Player.cpp
-  GameProg.vcxproj -> C:\Users\al17002\source\repos\game\jikken\x64\Debug\GameProg.exe
+  LINK : 前回のインクリメンタル リンクで C:\Users\al17010\source\repos\game\jikken\x64\Debug\GameProg.exe が見つからなかったか、ビルドされませんでした。フル リンクを行います。
+  GameProg.vcxproj -> C:\Users\al17010\source\repos\game\jikken\x64\Debug\GameProg.exe

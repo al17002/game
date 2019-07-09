@@ -42,7 +42,7 @@ void Player_Update() {
 				walking_flag = 0; //•à‚©‚È‚¢ƒtƒ‰ƒO‚ð—§‚Ä‚é
 
 			if (walking_flag == 1) {
-				if (IsAbleToGo(player.x, player.y, muki) == 1) {
+				if (IsAbleToGo(player.x, player.y, muki,true) == 1) {
 					walking_flag = 0;
 					turn = false;
 				}

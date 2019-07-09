@@ -16,8 +16,19 @@ static bool check = false;
 // 初期化をする
 void EnemyMgr_Initialize() {
 	LoadDivGraph("画像/キャラクタ11.png", 16, 4, 4, 32, 32, image);
-	Enemy_Initialize(&m_Enemy[0], 288,320, image, 0);// 初期化
-	Enemy_Initialize(&m_Enemy[1], 320,320, image, 1);// 初期化
+	int x, y;
+	calcenemy(&x, &y);
+	Enemy_Initialize(&m_Enemy[0], x,y, image, 0);// 初期化
+	calcenemy(&x, &y);
+	Enemy_Initialize(&m_Enemy[1], x,y, image, 1);// 初期化
+	calcenemy(&x, &y);
+	Enemy_Initialize(&m_Enemy[2], x, y, image, 2);// 初期化
+	calcenemy(&x, &y);
+	Enemy_Initialize(&m_Enemy[3], x, y, image, 3);// 初期化
+	calcenemy(&x, &y);
+	Enemy_Initialize(&m_Enemy[4], x, y, image, 4);// 初期化
+	calcenemy(&x, &y);
+	Enemy_Initialize(&m_Enemy[5], x, y, image, 5);// 初期化
 }
 
 // 動きを計算する

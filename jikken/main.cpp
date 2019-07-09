@@ -12,6 +12,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	Player_Initialize();
 	EnemyMgr_Initialize();
 	Floor_Initialize();
+	Item_Initialize();
 	load_map(1);
 	//Floor_Initialize();
 	//load_map(1);
