@@ -7,10 +7,12 @@
 #include "Map.h"
 int Font01;
 int Font02;
+int Font03;
 
 void Font_Initialize() {
 	Font01 = CreateFontToHandle("ＭＳ ゴシック", 30, 9, DX_FONTTYPE_NORMAL);
 	Font02 = CreateFontToHandle("ＭＳ ゴシック", 70, 9, DX_FONTTYPE_NORMAL);
+	Font03 = CreateFontToHandle("ＭＳ ゴシック", 120, 9, DX_FONTTYPE_NORMAL);
 }
 //更新
 void Title_Update() {
