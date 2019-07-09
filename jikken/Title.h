@@ -1,5 +1,5 @@
 #pragma once
-extern int Font01,Font02;
+extern int Font01,Font02,Font03;
 
 void Font_Initialize();
 //XV
