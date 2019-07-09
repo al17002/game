@@ -1,2 +1,3 @@
-﻿  Save.cpp
-  GameProg.vcxproj -> C:\Users\al16038\source\repos\game\jikken\x64\Debug\GameProg.exe
+﻿  Map.cpp
+c:\users\al17010\source\repos\game\jikken\map.cpp(163): warning C4101: 'end': ローカル変数は 1 度も使われていません。
+  GameProg.vcxproj -> C:\Users\al17010\source\repos\game\jikken\x64\Debug\GameProg.exe

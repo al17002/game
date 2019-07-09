@@ -8,6 +8,7 @@
 static int image[16];
 
 static int image_floor;
+static int image_item;
 static int map[32][40] = {};
 int map_sur[32][40] = {};
 static int current_map = 1;
@@ -104,6 +105,9 @@ static int m_Image;
 void Floor_Initialize() {
 	image_floor=LoadGraph("‰æ‘œ/ŠK’i.png");
 }
+void Item_Initialize() {
+	image_item = LoadGraph("‰æ‘œ/ƒAƒCƒeƒ€01.png");
+}
 
 //•`‰æ
 void Map_Draw() {
@@ -116,7 +120,7 @@ void Map_Draw() {
 				DrawGraph(j * 32, i * 32, image_floor, TRUE);
 			}
 			else if (map[i][j] >= 10) {
-				DrawBox(j * 32, i * 32, (j + 1) * 32, (i + 1) * 32, GetColor(255, 255, 0), TRUE);
+				DrawGraph(j * 32, i * 32, image_item, TRUE);
 			}
 		}
 	}

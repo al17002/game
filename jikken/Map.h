@@ -15,6 +15,8 @@ int IsAbleToGo(int x, int y, int muki);
 //‰æ‘œ‚Ì“Ç‚İ‚İ
 void Floor_Initialize();
 
+void Item_Initialize();
+
 //•`‰æ
 void Map_Draw();
 
