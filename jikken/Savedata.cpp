@@ -181,6 +181,7 @@ void hit_player(int enemy_id) {
 			player.equipment.ID = 1;
 			player.equipment.hp = itemRef[player.equipment.ID].hp;
 			player.equipment.atk = itemRef[player.equipment.ID].atk;
+			clearHitbox();
 			SceneMgr_ChangeScene(eScene_Death);
 		}
 	}

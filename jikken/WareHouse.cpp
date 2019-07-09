@@ -15,13 +15,11 @@ void WareHouse_Update() {
 	if (CheckHitKey(KEY_INPUT_G) != 0) {//Gキーが押されていたら
 		EnemyMgr_Finalize();
 		Player_Finalize();
-
 		dataflow();
-
+		load_map(1);
 		Player_Initialize();
 		EnemyMgr_Initialize();
 		Floor_Initialize();
-		load_map(1);
 		SceneMgr_ChangeScene(eScene_Game);//シーンをゲーム画面に変更
 	}
 	if (CheckHitKey(KEY_INPUT_T) != 0) {
