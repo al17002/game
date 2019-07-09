@@ -12,9 +12,6 @@ void EquipmentChange_Update() {
 	if (Keyboard_Get(KEY_INPUT_M) == 1) { //Mを選択
 		SceneMgr_ChangeScene(eScene_Menu);//メニューに戻る
 	}
-	else if (Keyboard_Get(KEY_INPUT_T) == 1) { //Tを選択
-		SceneMgr_ChangeScene(eScene_Title);//タイトルに戻る
-	}
 	else if (Keyboard_Get(KEY_INPUT_0) == 1) { //0を選択
 		if (player.having_item[0].ID != 0) {
 			player.equipment = player.having_item[0];
@@ -93,7 +90,6 @@ void EquipmentChange_Draw() {
 	int i;
 	DrawStringToHandle(350, 50, "装備変更画面(番号をプッシュして装備変更情報を保存)", GetColor(255, 255, 255),Font01);
 	DrawStringToHandle(550, 150, "M:メニュー画面に戻る", GetColor(255, 255, 255),Font01);
-	DrawStringToHandle(550, 200, "T:タイトルに移動", GetColor(255, 255, 255),Font01);
 	DrawStringToHandle(550, 350, "アイテム情報", GetColor(255, 255, 255),Font01);//データ1アイテム情報
 	DrawFormatStringToHandle(550, 420, GetColor(255, 255, 255),Font01, "装備中:%s atk:%d hp:%d", itemRef[player.equipment.ID].name, player.equipment.atk, player.equipment.hp);
 	DrawStringToHandle(550, 490, "所持アイテム", GetColor(255, 255, 255), Font01);

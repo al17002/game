@@ -13,6 +13,14 @@ void removeHitbox(int y, int x) {
 	x = x / 32;
 	hitmap[y][x] = 0;
 }
+
+void clearHitbox() {
+	for (int i = 0; i < 32; i++) {
+		for (int j = 0; j < 40; j++) {
+			hitmap[i][j] = 0;
+		}
+	}
+}
 int hitJudgement(int direction, int myNum) {
 	if (myNum == -1) {//player‚ªˆÚ“®‚µ‚Ä‚¢‚é
 		int x = player.x / 32, y = player.y / 32;

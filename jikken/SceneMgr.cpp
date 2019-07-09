@@ -38,6 +38,9 @@ void SceneMgr_Update() {
 	case eScene_Death:
 		Death_Update();
 		break;
+	case eScene_Win:
+		Win_Update();
+		break;
 	}
 }
 
@@ -67,6 +70,9 @@ void SceneMgr_Draw() {
 		break;
 	case eScene_Death:
 		Death_Draw();
+		break;
+	case eScene_Win:
+		Win_Draw();
 		break;
 	}
 

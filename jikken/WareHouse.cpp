@@ -40,10 +40,10 @@ void WareHouse_Update() {
 //描画
 void WareHouse_Draw() {
 	int i;
-	DrawStringToHandle(550, 50, "ゲーム遷移画面", GetColor(255, 255, 255),Font01);
+	DrawStringToHandle(550, 50, "倉庫画面", GetColor(255, 255, 255),Font01);
 	DrawStringToHandle(550, 150, "G:ゲーム画面へ", GetColor(255, 255, 255),Font01);
 	DrawStringToHandle(550, 200, "T:タイトルへ戻る", GetColor(255, 255, 255),Font01);
-	DrawStringToHandle(550, 250, "Sセーブ", GetColor(255, 255, 255), Font01);
+	DrawStringToHandle(550, 250, "S:セーブ", GetColor(255, 255, 255), Font01);
 	DrawStringToHandle(550, 300, "E:終了", GetColor(255, 255, 255),Font01);
 	DrawStringToHandle(550, 400, "装備情報", GetColor(255, 255, 255),Font01);
 	//s = "キャラクタ管理部の関数";

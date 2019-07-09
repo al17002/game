@@ -32,8 +32,8 @@ void Save_Update() {
 //描画
 void Save_Draw() {
 	int i;
-	DrawStringToHandle(350, 50, "セーブ保存画面(番号をプッシュしてセーブデータを保存)", GetColor(255, 255, 255),Font01);
-	DrawStringToHandle(550, 150, "W:セーブ遷移画面に戻る", GetColor(255, 255, 255),Font01);
+	DrawStringToHandle(350, 50, "セーブ画面(番号をプッシュしてセーブデータを保存)", GetColor(255, 255, 255),Font01);
+	DrawStringToHandle(550, 150, "W:倉庫に戻る", GetColor(255, 255, 255),Font01);
 	DrawStringToHandle(30, 300, "1.アイテム情報", GetColor(255, 255, 255),Font01);//データ1アイテム情報
 	input_savedata(1);
 	DrawFormatStringToHandle(30, 370, GetColor(255, 255, 255),Font01, "装備中:%s atk:%d hp:%d", itemRef[player_item.equipment.ID].name, player_item.equipment.atk, player_item.equipment.hp);
@@ -55,4 +55,5 @@ void Save_Draw() {
 	for (i = 0; i < 10; i++) {
 		DrawFormatStringToHandle(1030, 490 + 40 * i, GetColor(255, 255, 255),Font01, "%d:%s atk:%d hp:%d", i, itemRef[player_item.having_item[i].ID].name, player_item.having_item[i].atk, player_item.having_item[i].hp);
 	}
+	player_item = save_temp;
 }
