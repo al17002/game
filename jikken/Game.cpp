@@ -31,6 +31,9 @@ void Game_Draw() {
 	DrawFormatString(1250, 60, GetColor(255, 255, 255), "MƒL[‚ğ‰Ÿ‚·‚Æ\nƒƒjƒ…[‰æ–Ê‚ÉˆÚ“®‚µ‚Ü‚·B");
 	DrawFormatString(1250, 150, GetColor(255, 255, 255), "Œ»İ‚Í%dŠK‘w–Ú‚Å‚·",1);
 	DrawFormatString(1250, 200, GetColor(255, 255, 255), "‘•”õ’†:%s atk: %d hp: %d", itemRef[player.equipment.ID].name, player.equipment.atk, player.equipment.hp);
-	DrawFormatString(1250, 300, GetColor(255, 255, 255), "“G1:%d atk: %d hp: %d,: %d", m_Enemy[1].equipment.ID, m_Enemy[1].equipment.atk, m_Enemy[1].equipment.hp, m_Enemy[1].alive);
+
+	DrawFormatString(1250, 250, GetColor(255, 255, 255), "plx: %d y: %d", player.x, player.y);
+	DrawFormatString(1250, 300, GetColor(255, 255, 255), "“G1x: %d y: %d", m_Enemy[1].x, m_Enemy[1].y);
+	DrawFormatString(1250, 400, GetColor(255, 255, 255), "“G0x: %d y: %d", m_Enemy[0].x, m_Enemy[0].y);
 
 }
