@@ -32,19 +32,19 @@ void Enemy_Update(Enemy_t *Enemy) {
 			Enemy->walking_flag = 0;         //歩かないフラグを立てる。
 			if (!Enemy->enemy_turn) {//ターンがある（エネミー)
 				Enemy->walking_flag = 1;
-				if (player.y < Enemy->y && (IsAbleToGo(Enemy->x, Enemy->y, 0) != 1))  //上ボタンが押されたら
+				if (player.y < Enemy->y && (IsAbleToGo(Enemy->x, Enemy->y, 0,false) != 1))  //上にいるなら
 					Enemy->muki = 0;         //上向きフラグを立てる
-				else if (player.x < Enemy->x && (IsAbleToGo(Enemy->x, Enemy->y, 1) != 1))  //左ボタンが押されたら
+				else if (player.x < Enemy->x && (IsAbleToGo(Enemy->x, Enemy->y, 1, false) != 1))  //左にいるなら
 					Enemy->muki = 1;         //左向きフラグを立てる
-				else if (player.y > Enemy->y && (IsAbleToGo(Enemy->x, Enemy->y, 2) != 1))  //下ボタンが押されたら
+				else if (player.y > Enemy->y && (IsAbleToGo(Enemy->x, Enemy->y, 2, false) != 1))  //下にいるなら
 					Enemy->muki = 2;         //下向きフラグを立てる
-				else if (player.x > Enemy->x && (IsAbleToGo(Enemy->x, Enemy->y, 3) != 1))  //右ボタンが押されたら
+				else if (player.x > Enemy->x && (IsAbleToGo(Enemy->x, Enemy->y, 3, false) != 1))  //右にいるなら
 					Enemy->muki = 3;         //右向きフラグを立てる
 				else                                    //何のボタンも押されてなかったら
 					Enemy->walking_flag = 1; //まあ頑張って左に歩くフラグを立てる
 			}
 			if (Enemy->walking_flag == 1) {
-				if (IsAbleToGo(Enemy->x, Enemy->y, Enemy->muki) == 1) {
+				if (IsAbleToGo(Enemy->x, Enemy->y, Enemy->muki,false) == 1) {
 					Enemy->walking_flag = 0;
 					Enemy->enemy_turn = true;
 				}

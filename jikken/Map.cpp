@@ -1,10 +1,12 @@
 #include "Map.h"
+#include "stdlib.h"
 #include "DxLib.h"
 #include "Player.h"
 #include "EnemyMgr.h"
 #include "Savedata.h"
 #include "SceneMgr.h"
 #include "hitJudgment.h"
+#include "time.h"
 static int image[16];
 
 static int image_floor;
@@ -28,6 +30,27 @@ void item_event(int n) {
 	add_item(n);
 }
 
+//敵の座標を計算する
+void calcenemy(int *x, int *y) {
+	bool check = true;
+	int tx, ty;
+	srand((unsigned)time(NULL));
+	tx = rand() % 39;
+	ty = rand() % 31;
+	while (check){
+		if (map[ty][tx]==0) {
+			map[ty][tx] = -1;
+			*x = tx*32;
+			*y = ty*32;
+			check = false;
+		}
+		else {
+			tx = rand() % 39;
+			ty = rand() % 31;
+		}
+	}	
+	check = true;
+}
 void floor_event(int n) {
 	if (n == 3) {
 		current_map++;
@@ -41,18 +64,24 @@ void floor_event(int n) {
 	}
 }
 //進めるかを判定する
-int IsAbleToGo(int x, int y, int muki) {
+int IsAbleToGo(int x, int y, int muki,bool player) {
 	if (muki == 0) {//上向きなら
 		if (map[y / 32 - 1][x / 32] == 1){ 
 			return 1;//壁
 		}
 		else if (map[y / 32 - 1][x / 32] <= 9 && map[y / 32 - 1][x / 32] >= 2) {
-			floor_event(map[y / 32 - 1][x / 32]); //進む先の2<=map[][]=<9のとき、floor_event関数呼び出し
+			if (player) {//進む先の2<=map[][]=<9のとき、floor_event関数呼び出し
+				floor_event(map[y / 32 - 1][x / 32]); 
+			}
 			return 0;
 		}
 		else if (map[y / 32 - 1][x / 32] >= 10) {
-			item_event(map[y / 32 - 1][x / 32]); //進む先のmap[][]>=10のとき、item_event関数呼び出し
-			map[y / 32 - 1][x / 32] = 0;
+			if (player) {//進む先のmap[][]>=10のとき、item_event関数呼び出し
+				if (player) {
+					item_event(map[y / 32 - 1][x / 32]);
+					map[y / 32 - 1][x / 32] = 0;
+				}
+			}
 			return 0;
 		}
 	}
@@ -61,12 +90,16 @@ int IsAbleToGo(int x, int y, int muki) {
 			return 1;
 		}
 		else if (map[y / 32][x / 32 - 1] <= 9 && map[y / 32][x / 32 - 1] >= 2) {
-			floor_event(map[y / 32][x / 32 - 1]); 
+			if (player) {
+				floor_event(map[y / 32][x / 32 - 1]);
+			}
 			return 0;
 		}
 		else if (map[y / 32 ][x / 32 - 1] >= 10) {
-			item_event(map[y / 32][x / 32 - 1]);
-			map[y / 32 ][x / 32 - 1] = 0;
+			if (player) {
+				item_event(map[y / 32][x / 32 - 1]);
+				map[y / 32][x / 32 - 1] = 0;
+			}
 			return 0;
 		}
 	}
@@ -76,12 +109,16 @@ int IsAbleToGo(int x, int y, int muki) {
 			return 1;
 		}
 		else if (map[y / 32 + 1][x / 32] <= 9 && map[y / 32 + 1][x / 32] >= 2) {
-			floor_event(map[y / 32 + 1][x / 32]); 
+			if (player) {
+				floor_event(map[y / 32 + 1][x / 32]);
+			}
 			return 0;
 		}
 		else if (map[y / 32 + 1][x / 32] >= 10) {
-			item_event(map[y / 32 + 1][x / 32]);
-			map[y / 32 + 1][x / 32] = 0;
+			if (player) {
+				item_event(map[y / 32 + 1][x / 32]);
+				map[y / 32 + 1][x / 32] = 0;
+			}
 			return 0;
 		}
 	}
@@ -90,12 +127,16 @@ int IsAbleToGo(int x, int y, int muki) {
 			return 1;
 		}
 		else if (map[y / 32][x / 32 + 1] <= 9 && map[y / 32][x / 32 + 1] >= 2) {
-			floor_event(map[y / 32][x / 32 + 1]); 
+			if (player) {
+				floor_event(map[y / 32][x / 32 + 1]);
+			}
 			return 0;
 		}
 		else if (map[y / 32][x / 32 + 1] >= 10) {
-			item_event(map[y / 32][x / 32 + 1]);
-			map[y / 32 ][x / 32 + 1] = 0;
+			if (player) {
+				item_event(map[y / 32][x / 32 + 1]);
+				map[y / 32][x / 32 + 1] = 0;
+			}
 			return 0;
 		}
 	}
@@ -160,7 +201,7 @@ void load_map(int map_id) {
 		filename = "map.txt";
 		break;
 	}
-	char buf[200], *p, *end;
+	char buf[200], *p;
 	fopen_s(&fp, filename, "r");
 	/*if (fp == NULL) {
 		printf("error/n");

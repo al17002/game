@@ -7,6 +7,7 @@
 #include "hitJudgment.h"
 #include "SceneMgr.h"
 #include "Enemymgr.h"
+#include "Title.h"
 
 // このファイル内でしか使えないグローバル変数
 static int m_Image; //画像ハンドル
@@ -96,8 +97,8 @@ void Death_Update() {
 }
 
 void Death_Draw() {
-	DrawString(400, 200, "GAME OVER!!", GetColor(255, 255, 255));
-	DrawString(100, 120, "PRESS ENTER KEY", GetColor(255, 255, 255));
+	DrawStringToHandle(450, 400, "GAME OVER!!", GetColor(255, 255, 255),Font03);
+	DrawStringToHandle(850, 950, "PRESS ENTERで続行", GetColor(255, 255, 255),Font02);
 	
 }
 
@@ -112,6 +113,6 @@ void Win_Update() {
 }
 
 void Win_Draw() {
-	DrawString(400, 200, "GAME CLEAR!!", GetColor(255, 255, 255));
-	DrawString(100, 120, "PRESS ENTER KEY", GetColor(255, 255, 255));
+	DrawStringToHandle(400, 400, "GAME CLEAR!!", GetColor(255, 255, 255),Font03);
+	DrawStringToHandle(850, 950, "ENTER KEYで続行", GetColor(255, 255, 255),Font02);
 }

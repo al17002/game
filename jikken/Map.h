@@ -10,7 +10,7 @@ void item_event(int n);
 void floor_event(int n);
 
 //進めるかを判定する
-int IsAbleToGo(int x, int y, int muki);
+int IsAbleToGo(int x, int y, int muki,bool player);
 
 //画像の読み込み
 void Floor_Initialize();
@@ -25,3 +25,6 @@ void Map_Draw_Surround();
 
 //マップの読み込み
 void load_map(int map_id);
+
+//敵の座標を計算する
+void calcenemy(int *x, int *y);
