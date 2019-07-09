@@ -24,7 +24,7 @@ void Menu_Update() {
 void Menu_Draw() {
 	int i;
 	DrawStringToHandle(550, 50, "メニュー", GetColor(255, 255, 255),Font01);
-	DrawStringToHandle(550, 150, "G:ゲーム画面に戻る", GetColor(255, 255, 255),Font01);
+	DrawStringToHandle(550, 150, "G:ゲームに戻る", GetColor(255, 255, 255),Font01);
 	DrawStringToHandle(550, 200, "H:装備変更", GetColor(255, 255, 255),Font01);
 	DrawStringToHandle(550, 250, "T:タイトルへ戻る", GetColor(255, 255, 255),Font01);
 	DrawStringToHandle(550, 300, "E:終了", GetColor(255, 255, 255),Font01);
